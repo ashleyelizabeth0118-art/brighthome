@@ -8,107 +8,96 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bone: #f5f4ef;
+      --stone: #e2e0d8;
+      --pine: #2f4f46;
+      --clay: #8a6f4d;
+      --ink: #1f2933;
+      --muted: #5f6b66;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.6;
+      background: var(--bone);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, var(--stone), var(--bone));
+      padding: 5rem 1.5rem 4rem;
     }
 
     .container {
       max-width: 960px;
       margin: auto;
-      padding: 3rem 1.5rem;
-    }
-
-    .hero {
-      padding: 4rem 0;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       font-weight: 600;
       margin-bottom: 1rem;
-    }
-
-    h2 {
-      margin-top: 3rem;
-      font-weight: 600;
-    }
-
-    p {
-      max-width: 720px;
+      color: var(--pine);
     }
 
     .tagline {
-      font-size: 1.2rem;
-      color: #555;
+      font-size: 1.3rem;
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--pine);
+    }
+
+    p {
+      max-width: 760px;
+      margin-bottom: 1.25rem;
     }
 
     .divider {
-      margin: 3rem 0;
-      border-top: 1px solid #ddd;
+      height: 1px;
+      background: #d1d5db;
+      margin: 0 auto;
+      max-width: 960px;
     }
 
     footer {
+      background: var(--pine);
+      color: #e6ebe8;
       text-align: center;
+      padding: 2.5rem 1.5rem;
       font-size: 0.9rem;
-      color: #777;
-      padding: 2rem 1rem;
+    }
+
+    footer span {
+      color: #cfd8d3;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <section class="hero">
+  <div class="hero">
+    <div class="container">
       <h1>Bright Home Investments</h1>
       <p class="tagline">
-        Thoughtful housing development focused on affordability, sustainability, and long-term community value.
+        Thoughtful housing development rooted in affordability, sustainability,
+        and long-term community stability.
       </p>
-    </section>
-
-    <div class="divider"></div>
-
-    <section>
-      <h2>What We Do</h2>
-      <p>
-        Bright Home Investments develops and supports housing projects designed to be durable, efficient,
-        and accessible — without sacrificing quality or community character.
-      </p>
-    </section>
-
-    <section>
-      <h2>Our Approach</h2>
-      <p>
-        We prioritize responsible land use, reduced waste, and long-term affordability.
-        Our developments are built with the future in mind — both for homeowners and the communities they live in.
-      </p>
-    </section>
-
-    <section>
-      <h2>Current Focus</h2>
-      <p>
-        Rural and small-community housing initiatives that balance modern construction methods
-        with practical, human-scale design.
-      </p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>
-        Email: <strong>info@brighthomeinvestments.net</strong>
-      </p>
-    </section>
-
+    </div>
   </div>
 
-  <footer>
-    © 2026 Bright Home Investments
-  </footer>
+  <div class="divider"></div>
 
-</body>
-</html>
+  <section>
+    <div class="contai
