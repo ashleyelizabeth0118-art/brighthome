@@ -5,215 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bright Home Investments</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --bone: #f5f4ef;
-      --stone: #e2e0d8;
-      --pine: #2f4f46;
-      --clay: #8a6f4d;
-      --ink: #1f2933;
-      --muted: #5f6b66;
+      --linen: #f6f4f0;
+      --clay: #e7e2da;
+      --forest: #2f4f3e;
+      --charcoal: #2b2b2b;
+      --muted: #6b6b6b;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bone);
-      color: var(--ink);
-      line-height: 1.7;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--linen);
+      color: var(--charcoal);
+      line-height: 1.6;
     }
 
-    .hero {
-      background: linear-gradient(to bottom, var(--stone), var(--bone));
-      padding: 5rem 1.5rem 4rem;
-    }
-
-    .container {
-      max-width: 960px;
+    header {
+      padding: 4rem 2rem 3rem;
+      max-width: 1100px;
       margin: auto;
     }
 
-    h1 {
-      font-size: 2.75rem;
+    header h1 {
+      font-size: 2.6rem;
       font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--pine);
+      margin-bottom: 0.5rem;
+      color: var(--forest);
     }
 
-    .tagline {
-      font-size: 1.3rem;
+    header p {
+      font-size: 1.15rem;
       max-width: 720px;
       color: var(--muted);
     }
 
     section {
-      padding: 3.5rem 1.5rem;
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    h2 {
-      font-size: 1.65rem;
+    .section-title {
+      font-size: 1.6rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: var(--pine);
+      margin-bottom: 1rem;
+      color: var(--forest);
     }
 
-    p {
-      max-width: 760px;
-      margin-bottom: 1.25rem;
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+
+    .card p {
+      margin-top: 0;
+      color: var(--charcoal);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
     }
 
     .project {
-      background: #ffffff;
-      border-left: 4px solid var(--clay);
-      padding: 1.75rem 2rem;
-      margin-top: 1.5rem;
-      max-width: 760px;
+      background: var(--clay);
+      padding: 1.5rem;
+      border-radius: 12px;
     }
 
     .project h3 {
       margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.25rem;
-      color: var(--pine);
+      color: var(--forest);
+      font-weight: 600;
     }
 
     .project p {
-      margin-bottom: 0;
-      color: var(--ink);
-    }
-
-    .divider {
-      height: 1px;
-      background: #d1d5db;
-      margin: 0 auto;
-      max-width: 960px;
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
     footer {
-      background: var(--pine);
-      color: #e6ebe8;
+      padding: 2rem;
       text-align: center;
-      padding: 2.5rem 1.5rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
 
-    footer span {
-      color: #cfd8d3;
+    a {
+      color: var(--forest);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      border-bottom: 1px solid var(--forest);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <div class="container">
-      <h1>Bright Home Investments</h1>
-      <p class="tagline">
-        Thoughtful housing development rooted in affordability, sustainability,
-        and long-term community stability.
-      </p>
-    </div>
-  </div>
-
-  <div class="divider"></div>
+  <header>
+    <h1>Bright Home Investments</h1>
+    <p>
+      We develop thoughtful housing rooted in place, people, and long-term stewardship.
+      Our work focuses on affordability, durability, and respect for the rural communities we serve.
+    </p>
+  </header>
 
   <section>
-    <div class="container">
-      <h2>What We Build</h2>
+    <div class="card">
+      <h2 class="section-title">Our Approach</h2>
       <p>
-        Bright Home Investments focuses on housing that is practical, durable,
-        and designed to last. We develop homes that meet real needs — not trends —
-        with an emphasis on efficiency, responsible land use, and long-term affordability.
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section>
-    <div class="container">
-      <h2>Our Approach</h2>
-      <p>
-        We believe housing should serve people first. That means building simply,
-        wasting less, and planning for the full life of a home — from construction
-        through long-term ownership.
+        Bright Home Investments was formed with a simple conviction: working families deserve stable,
+        well-built homes that do not force impossible trade-offs.
       </p>
       <p>
-        Our work balances modern building methods with grounded, human-scale design.
-        Every decision is weighed against its impact on cost, durability,
-        and the surrounding community.
+        We focus on small-scale, carefully planned developments that fit the land, strengthen local
+        economies, and remain affordable over time — not just at first sale.
+      </p>
+      <p>
+        We are not driven by volume or speculation. We are driven by outcomes that last.
       </p>
     </div>
   </section>
 
-  <div class="divider"></div>
-
   <section>
-    <div class="container">
-      <h2>Projects</h2>
-      <p>
-        Our projects are developed deliberately and in phases, allowing each site
-        to respond to local conditions, infrastructure capacity, and long-term
-        stewardship goals.
-      </p>
+    <h2 class="section-title">Projects</h2>
 
+    <div class="projects">
       <div class="project">
         <h3>White Oak Cove</h3>
         <p>
-          A planned rural housing development focused on affordability, durability,
-          and environmental responsibility. White Oak Cove is currently in early
-          planning and feasibility stages, with an emphasis on thoughtful land use,
-          infrastructure efficiency, and long-term community stability.
+          A planned rural housing development designed to serve working families earning
+          60–80% of Area Median Income.
+        </p>
+        <p>
+          The project emphasizes long-term affordability, energy-efficient construction,
+          and land stewardship through a community-focused ownership model.
+        </p>
+        <p>
+          Currently in early development and planning.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Future Developments</h3>
+        <p>
+          Bright Home Investments is actively evaluating additional rural sites
+          where thoughtful design and responsible financing can close documented housing gaps.
+        </p>
+        <p>
+          Details will be shared as projects move from concept to commitment.
         </p>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
   <section>
-    <div class="container">
-      <h2>Where We Work</h2>
+    <div class="card">
+      <h2 class="section-title">Why This Matters</h2>
       <p>
-        Our focus is rural and small-community development — places where housing
-        is often overlooked, but deeply needed. We work closely with local conditions,
-        infrastructure realities, and long-term stewardship in mind.
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section>
-    <div class="container">
-      <h2>Our Commitment</h2>
-      <p>
-        We are committed to building homes people can afford today and remain in
-        tomorrow. That commitment shapes our financing strategies, construction choices,
-        and development timelines.
+        Across rural Missouri, essential workers are increasingly priced out of homeownership.
+        This is not a lack of demand — it is a market failure.
       </p>
       <p>
-        We build deliberately, with clarity of purpose and respect for the land
-        and communities involved.
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section>
-    <div class="container">
-      <h2>Contact</h2>
-      <p>
-        Email: <strong>info@brighthomeinvestments.net</strong>
+        Our work exists to address that gap with practical, financially disciplined solutions
+        that respect both people and place.
       </p>
     </div>
   </section>
 
   <footer>
-    <span>© 2026 Bright Home Investments</span>
+    © 2026 Bright Home Investments · Built with intention
   </footer>
 
 </body>
