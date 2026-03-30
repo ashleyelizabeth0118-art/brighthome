@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f3ef;
+  color: #2d2a26;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+  height: 42px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 60px;
+  gap: 80px;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero-text p {
+  max-width: 420px;
+  color: #666;
+  font-size: 16px;
+}
+
+.hero-image img {
+  width: 380px;
+  border-radius: 14px;
+}
+
+/* COMMITMENT */
+.commitment {
+  background: #d9d2c7;
+  padding: 100px 60px;
+  display: flex;
+  gap: 80px;
+}
+
+.commit-left h2 {
+  font-size: 44px;
+  max-width: 260px;
+}
+
+.commit-right {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #333;
+}
+
+/* PROJECTS */
+.projects {
+  padding: 100px 60px;
+}
+
+.projects h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+.project-grid {
+  display: flex;
+  gap: 25px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 50px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .commitment {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .project-grid {
+    flex-direction: column;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+  }
+
+  .nav {
+    padding: 20px;
+  }
+}
