@@ -3,98 +3,734 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bright Home Investments</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <title>Bright Home Investments — Quality homes in the Missouri Ozarks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --ink:        #2B2520;
+      --ink-light:  #5C4D45;
+      --cream:      #F6F1EB;
+      --cream-dark: #EDE6DC;
+      --terra:      #8B4A32;
+      --terra-muted:#A06848;
+      --sage:       #6A7A60;
+      --rule:       rgba(43,37,32,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── WIP BANNER ── */
+    .wip-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 101;
+      background: var(--cream-dark);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      padding: 0.55rem 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .wip-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terra-muted);
+      animation: pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 33px; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 18px rgba(43,37,32,0.08); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .nav-logo-name {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+    .nav-logo-sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    nav a.nav-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: var(--terra); }
+
+    .nav-links { display: flex; gap: 2rem; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 105px;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terra-muted);
+      font-weight: 500;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-headline {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .hero-body {
+      font-size: 1rem;
+      color: var(--ink-light);
+      max-width: 38ch;
+      line-height: 1.8;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--terra);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--cream);
+      background: var(--ink);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      border: 1.5px solid var(--ink);
+      transition: background 0.25s, color 0.25s;
+      align-self: flex-start;
+    }
+    .hero-cta:hover { background: var(--terra); border-color: var(--terra); }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background: #3D3028;
+    }
+
+    .hero-image-css {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-sky {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, #2B2520 0%, #4A3828 40%, #7A5C40 72%, #C4935A 88%, #D4A96A 100%);
+    }
+
+    .hero-hills {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 65%;
+      background: #3D2E1E;
+      clip-path: polygon(0 60%, 18% 28%, 35% 42%, 52% 18%, 68% 35%, 82% 20%, 100% 38%, 100% 100%, 0 100%);
+    }
+
+    .hero-treeline {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: #2B2520;
+      clip-path: polygon(
+        0 55%, 4% 35%, 7% 55%, 10% 25%, 13% 45%, 16% 20%, 19% 40%,
+        22% 15%, 25% 38%, 28% 22%, 31% 42%, 34% 18%, 37% 38%,
+        40% 12%, 43% 35%, 46% 20%, 49% 40%, 52% 18%, 55% 38%,
+        58% 22%, 61% 42%, 64% 18%, 67% 38%, 70% 25%, 73% 45%,
+        76% 20%, 79% 40%, 82% 28%, 85% 48%, 88% 25%, 91% 45%,
+        94% 30%, 97% 50%, 100% 35%, 100% 100%, 0 100%
+      );
+    }
+
+    .hero-image-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      padding: 5.5rem 5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terra-muted);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-heading {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-rule {
+      width: 36px;
+      height: 2px;
+      background: var(--terra);
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    /* ── COMMITMENT ── */
+    .commitment {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .commitment-inner {
+      max-width: 860px;
+    }
+
+    .commitment .section-eyebrow { color: var(--terra-muted); }
+
+    .commitment .section-heading { color: var(--cream); }
+
+    .commitment .section-rule { background: var(--terra); }
+
+    .commitment-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: rgba(246,241,235,0.8);
+      max-width: 62ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .commitment-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(246,241,235,0.12);
+    }
+
+    .pillar-number {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.8rem;
+      font-style: italic;
+      color: var(--terra-muted);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .pillar-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(246,241,235,0.5);
+      margin-bottom: 0.6rem;
+    }
+
+    .pillar-text {
+      font-size: 0.92rem;
+      color: rgba(246,241,235,0.75);
+      line-height: 1.7;
+    }
+
+    /* ── PROJECTS ── */
+    .projects { background: var(--cream-dark); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.65fr;
+      gap: 1.5px;
+      margin-top: 3rem;
+      background: var(--rule);
+    }
+
+    .project-card {
+      background: var(--cream);
+      padding: 2.8rem;
+      position: relative;
+    }
+
+    .project-card.featured {
+      padding: 3.2rem;
+    }
+
+    .project-card.pipeline {
+      background: var(--cream-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-status {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--sage);
+      border: 1px solid var(--sage);
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1.6rem;
+    }
+    .project-status.planning { color: var(--terra-muted); border-color: var(--terra-muted); }
+    .project-status.pipeline-status { color: var(--ink-light); border-color: rgba(43,37,32,0.25); }
+
+    .project-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      line-height: 1.15;
+    }
+
+    .project-card.pipeline .project-name {
+      font-size: 1.4rem;
+      color: var(--ink-light);
+    }
+
+    .project-location {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      max-width: 52ch;
+    }
+
+    .project-card.pipeline .project-desc {
+      font-size: 0.88rem;
+      max-width: none;
+      color: rgba(92,77,69,0.75);
+    }
+
+    .project-detail-list {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .project-detail dt {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(92,77,69,0.6);
+      margin-bottom: 0.3rem;
+    }
+
+    .project-detail dd {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .pipeline-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(92,77,69,0.5);
+    }
+
+    /* ── LAND TRUST NOTE ── */
+    .trust-note {
+      background: var(--cream);
+      border-left: 3px solid var(--terra);
+      padding: 3rem 5rem;
+    }
+
+    .trust-note-inner {
+      max-width: 640px;
+    }
+
+    .trust-quote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .trust-attribution {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(246,241,235,0.6);
+      padding: 3.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      gap: 2rem;
+    }
+
+    .footer-brand .nav-logo-name { font-size: 1.2rem; }
+    .footer-brand .nav-logo-sub { color: rgba(246,241,235,0.35); }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(246,241,235,0.5);
+      margin-top: 0.75rem;
+      line-height: 1.6;
+      max-width: 34ch;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-contact a {
+      display: block;
+      color: rgba(246,241,235,0.7);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--terra-muted); }
+
+    .footer-bottom {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: rgba(246,241,235,0.3);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow  { animation: fadeUp 0.7s 0.1s both ease-out; }
+    .hero-headline { animation: fadeUp 0.7s 0.25s both ease-out; }
+    .hero-rule     { animation: fadeUp 0.7s 0.35s both ease-out; }
+    .hero-body     { animation: fadeUp 0.7s 0.45s both ease-out; }
+    .hero-cta      { animation: fadeUp 0.7s 0.55s both ease-out; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image { height: 55vw; }
+      .hero-text { padding: 4rem 2.5rem; }
+      section { padding: 4rem 2.5rem; }
+      .commitment-pillars { grid-template-columns: 1fr; gap: 2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured, .project-card.pipeline { padding: 2rem; }
+      footer { grid-template-columns: 1fr; }
+      .footer-right { text-align: left; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .trust-note { padding: 3rem 2.5rem; }
+    }
+  </style>
+</head>
 <body>
 
+<!-- WIP BANNER -->
+<div class="wip-banner">
+  <span class="wip-dot"></span>
+  This site is being built alongside our projects — more coming soon.
+</div>
+
 <!-- NAV -->
-<header class="nav">
-  <div class="logo">
-    <img src="images/logo.svg" alt="Bright Home Investments Logo">
+<nav id="mainNav">
+  <a class="nav-logo" href="#">
+    <img src="https://brighthomeinvestments.net/images/logo.svg" alt="Bright Home Investments" onerror="this.style.display='none'">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Bright Home</span>
+      <span class="nav-logo-sub">Investments</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#mission" class="nav-link">Mission</a>
+    <a href="mailto:hello@brighthomeinvestments.com" class="nav-link">Contact</a>
   </div>
-  <nav>
-    <a href="#">Home</a>
-  </nav>
-</header>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-text">
-    <h1>
-     Quality homes<br>
-      that working<br>
-      families can afford
+    <div class="hero-eyebrow">Rural Affordable Housing · Missouri Ozarks</div>
+    <h1 class="hero-headline">
+      Quality homes<br>
+      working families<br>
+      can <em>actually</em> afford.
     </h1>
-    <p>
-      We build modest, quality homes in the Missouri Ozarks for working families.
-      By partnering with local land trusts, we ensure housing stays within reach.
+    <div class="hero-rule"></div>
+    <p class="hero-body">
+      We develop modest, well-built homes in small Missouri communities — designed to last, priced to stay within reach, and built for the people who already belong here.
     </p>
+    <a href="#projects" class="hero-cta">See Our Projects</a>
   </div>
-
   <div class="hero-image">
-    <img src="images/hero.jpg" alt="Ozarks landscape">
+    <div class="hero-image-css" aria-hidden="true">
+      <div class="hero-sky"></div>
+      <div class="hero-hills"></div>
+      <div class="hero-treeline"></div>
+    </div>
+    <span class="hero-image-caption">Missouri Ozarks</span>
   </div>
 </section>
 
 <!-- COMMITMENT -->
-<section class="commitment">
-  <div class="commit-left">
-    <h2>Our Commitment to Quality</h2>
-  </div>
-
-  <div class="commit-right">
-    <p>
-      Bright Home Investments was formed around a simple conviction:
-      working families deserve stable, well-built homes without impossible trade-offs.
+<section class="commitment" id="mission">
+  <div class="commitment-inner">
+    <div class="section-eyebrow">Our Commitment</div>
+    <h2 class="section-heading">Built for real life.<br>Priced to stay that way.</h2>
+    <div class="section-rule"></div>
+    <p class="commitment-body">
+      Bright Home Investments was formed around a simple conviction: working families deserve stable, well-built homes without impossible trade-offs. We design small-scale developments that fit the land and stay affordable over time — not just at sale, but for the families who come after.
+    </p>
+    <p class="commitment-body">
+      We partner with community land trusts to keep the land permanently affordable, so the value we create stays in the community rather than being extracted from it.
     </p>
 
-    <p>
-      We design small-scale developments that fit the land and stay affordable over time.
-    </p>
-
-    <p>
-      Our homes are built to last — engineered for safety, efficiency, and dignity.
-    </p>
+    <div class="commitment-pillars">
+      <div>
+        <div class="pillar-number">01</div>
+        <div class="pillar-label">Built to last</div>
+        <div class="pillar-text">Engineered for safety, efficiency, and dignity — not the cheapest option that passes code.</div>
+      </div>
+      <div>
+        <div class="pillar-number">02</div>
+        <div class="pillar-label">Permanently affordable</div>
+        <div class="pillar-text">Ground lease partnerships ensure homes remain within reach for the next family, not just the first.</div>
+      </div>
+      <div>
+        <div class="pillar-number">03</div>
+        <div class="pillar-label">Place-rooted</div>
+        <div class="pillar-text">Small developments that fit the landscape and the community — not transplanted from somewhere else.</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="projects">
-  <h2>Local Housing Initiatives</h2>
+<section class="projects" id="projects">
+  <div class="section-eyebrow">Active Projects</div>
+  <h2 class="section-heading">Local Housing Initiatives</h2>
+  <div class="section-rule"></div>
 
-  <div class="project-grid">
+  <div class="projects-grid">
 
-    <div class="card">
-      <h3>White Oak Cove</h3>
-      <p>
-        A scenic development in early planning, designed to reflect the natural Ozarks landscape.
+    <!-- FEATURED PROJECT 1 -->
+    <div class="project-card featured">
+      <div class="project-status planning">Early Planning</div>
+      <div class="project-name">White Oak Cove</div>
+      <div class="project-location">Douglas County, Missouri</div>
+      <p class="project-desc">
+        A small-scale for-sale development designed to fit the natural Ozarks landscape. Homes will be built using panelized construction — efficient, precise, and well-suited to rural terrain. Paired with a community land trust ground lease to keep the homes permanently within reach of working families.
       </p>
+      <dl class="project-detail-list">
+        <div class="project-detail">
+          <dt>County</dt>
+          <dd>Douglas Co., MO</dd>
+        </div>
+        <div class="project-detail">
+          <dt>Financing</dt>
+          <dd>USDA · FHA eligible</dd>
+        </div>
+        <div class="project-detail">
+          <dt>Structure</dt>
+          <dd>CLT ground lease</dd>
+        </div>
+      </dl>
     </div>
 
-    <div class="card">
-      <h3>Rodeo Ave</h3>
-      <p>
-        A 6 home project focused on efficient, high-quality homes for local workers.
+    <!-- FEATURED PROJECT 2 -->
+    <div class="project-card featured">
+      <div class="project-status">Active</div>
+      <div class="project-name">Ava Development</div>
+      <div class="project-location">Ava, Missouri</div>
+      <p class="project-desc">
+        A for-sale development in Ava with finalized home designs and finishes. Modest, well-built homes sized for working families — designed to meet USDA and FHA financing requirements.
       </p>
+      <dl class="project-detail-list">
+        <div class="project-detail">
+          <dt>Location</dt>
+          <dd>Ava, MO</dd>
+        </div>
+        <div class="project-detail">
+          <dt>Financing</dt>
+          <dd>USDA · FHA eligible</dd>
+        </div>
+        <div class="project-detail">
+          <dt>Structure</dt>
+          <dd>CLT ground lease</dd>
+        </div>
+      </dl>
     </div>
 
-    <div class="card">
-      <h3>Morris Court</h3>
-      <p>
-        A modest neighborhood development creating a welcoming place for families.
-      </p>
+    <!-- PIPELINE CARD -->
+    <div class="project-card pipeline">
+      <div>
+        <div class="project-status pipeline-status">Pipeline</div>
+        <div class="project-name">Next Site</div>
+        <div class="project-location">Missouri Ozarks</div>
+        <p class="project-desc">
+          Site search is active. We're evaluating platted lots in incorporated towns across the region — flat terrain, city utilities, clear title.
+        </p>
+      </div>
+      <div class="pipeline-note">More projects coming · 2025–2026</div>
     </div>
 
   </div>
 </section>
 
+<!-- LAND TRUST NOTE -->
+<div class="trust-note">
+  <div class="trust-note-inner">
+    <p class="trust-quote">
+      "We build the homes. Our land trust partner holds the land — permanently — so that affordability isn't just a promise at closing. It's built into the structure."
+    </p>
+    <div class="trust-attribution">How the CLT model works →</div>
+  </div>
+</div>
+
 <!-- FOOTER -->
-<footer class="footer">
-  <p>Missouri Ozarks • hello@brighthomeinvestments.com</p>
-  <p>© 2026 Bright Home Investments LLC</p>
+<footer>
+  <div class="footer-brand">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Bright Home Investments</span>
+      <span class="nav-logo-sub" style="margin-top:0.2rem">LLC</span>
+    </div>
+    <p class="footer-tagline">Rural affordable housing development in the Missouri Ozarks.</p>
+  </div>
+  <div class="footer-right">
+    <div class="footer-contact">
+      <a href="mailto:hello@brighthomeinvestments.com">hello@brighthomeinvestments.com</a>
+      <a href="#">Missouri Ozarks</a>
+    </div>
+    <div class="footer-bottom">© 2026 Bright Home Investments LLC · All rights reserved</div>
+  </div>
 </footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
 
 </body>
 </html>
