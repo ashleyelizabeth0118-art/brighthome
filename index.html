@@ -13,590 +13,584 @@
   <style>
     :root {
       --ink: #2B2520;
-      --ink-light: #6b6058;
-      --cream: #F6F1EB;
-      --paper: #FBF8F4;
-      --sage: #6b7d5e;
-      --terra: #b86b3f;
-      --terra-muted: #a87a5c;
-      --rule: #d9cfc4;
+      --ink-soft: #4A4239;
+      --ink-mute: #7A7066;
+      --cream: #FAF7F2;
+      --cream-deep: #F2EDE4;
+      --rule: #DDD5C8;
+      --moss: #5C6E4F;
+      --clay: #B97A4E;
+      --serif: "EB Garamond", Georgia, serif;
+      --sans: "Raleway", system-ui, sans-serif;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
+      font-family: var(--sans);
+      font-weight: 300;
       color: var(--ink);
-      background: var(--paper);
-      line-height: 1.6;
+      background: var(--cream);
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── ANNOUNCEMENT BAR ── */
-    .announce {
-      background: var(--ink);
-      color: rgba(246,241,235,0.85);
-      text-align: center;
-      font-size: 0.74rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.65rem 1rem;
-      font-weight: 400;
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
     }
 
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.6rem 5rem;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      text-decoration: none;
-      color: var(--ink);
-    }
-    .nav-logo img { height: 42px; width: auto; }
-    /* If image loads, hide text fallback */
-    .nav-logo img + .nav-logo-text { display: none; }
-    .nav-logo-text { line-height: 1; }
-    .nav-logo-name {
-      font-family: 'EB Garamond', serif;
-      font-style: italic;
-      font-weight: 500;
-      font-size: 1.35rem;
-      color: var(--ink);
-    }
-    .nav-logo-sub {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: 0.62rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      margin-top: 0.2rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--ink);
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--terra); }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 6rem 5rem 7rem;
-      background: var(--paper);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-inner { max-width: 920px; }
-
-    .eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--terra);
-      font-weight: 500;
-      margin-bottom: 1.8rem;
-    }
-
-    .hero h1 {
-      font-family: 'EB Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(2.6rem, 6vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 1.8rem;
-    }
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 500;
-      color: var(--terra);
-    }
-
-    .hero-lead {
-      font-size: 1.1rem;
-      color: var(--ink-light);
-      max-width: 56ch;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 1rem 2.2rem;
-      font-size: 0.74rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.25s;
-    }
-    .btn-primary {
+    /* ---------- TOP BANNER ---------- */
+    .banner {
       background: var(--ink);
       color: var(--cream);
-      border: 1px solid var(--ink);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 10px 24px;
     }
-    .btn-primary:hover { background: var(--terra); border-color: var(--terra); }
+    .banner em { font-family: var(--serif); font-style: italic; font-weight: 500; }
 
-    .hero-locator {
-      position: absolute;
-      top: 6rem;
-      right: 5rem;
-      font-size: 0.66rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+    /* ---------- HEADER ---------- */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 22px 0;
+      background: var(--cream);
     }
-
-    /* ── SECTION HEAD ── */
-    .section { padding: 5.5rem 5rem; }
-    .section-cream { background: var(--cream); }
-
-    .section-eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .section-title {
-      font-family: 'EB Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      max-width: 22ch;
-      margin-bottom: 3.5rem;
+    .logo a {
+      display: inline-block;
+      line-height: 0;
+    }
+    .logo img {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+    nav a {
       color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
-    .section-title em { font-style: italic; color: var(--terra); }
+    nav a:hover { color: var(--moss); }
 
-    /* ── COMMITMENT GRID ── */
-    .commitment-intro {
-      max-width: 60ch;
-      font-size: 1rem;
-      color: var(--ink-light);
-      line-height: 1.75;
-      margin-bottom: 4rem;
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 110px 0 130px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 32px;
+    }
+    .eyebrow .dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--moss);
+      border-radius: 50%;
+      margin: 0 12px;
+      vertical-align: middle;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(44px, 6.4vw, 84px);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      max-width: 920px;
+      margin-bottom: 36px;
+    }
+    h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--moss);
+    }
+    .hero-sub {
+      font-size: 19px;
+      max-width: 620px;
+      color: var(--ink-soft);
+      margin-bottom: 48px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--ink);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      transition: all 0.2s;
+    }
+    .btn:hover { background: transparent; color: var(--ink); }
+
+    .hero-meta {
+      position: absolute;
+      right: 32px;
+      bottom: 28px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--ink-mute);
     }
 
-    .commitments {
+    /* ---------- SECTIONS ---------- */
+    section { padding: 110px 0; border-bottom: 1px solid var(--rule); }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(34px, 4.4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.005em;
+      margin-bottom: 32px;
+      max-width: 760px;
+    }
+    h2 em { font-style: italic; font-weight: 500; }
+
+    /* ---------- MISSION ---------- */
+    .mission-lead {
+      font-size: 19px;
+      color: var(--ink-soft);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+    .mission-lead + .mission-lead { margin-bottom: 80px; }
+
+    .pillars {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
+      gap: 0;
       border-top: 1px solid var(--rule);
-      padding-top: 3rem;
+      margin-top: 60px;
     }
-    .commit-num {
-      font-family: 'EB Garamond', serif;
+    .pillar {
+      padding: 48px 32px 16px 0;
+      border-right: 1px solid var(--rule);
+    }
+    .pillar:last-child { border-right: 0; padding-right: 0; }
+    .pillar-num {
+      font-family: var(--serif);
       font-style: italic;
-      font-size: 1.1rem;
-      color: var(--terra);
-      margin-bottom: 1rem;
+      font-size: 22px;
+      color: var(--clay);
+      margin-bottom: 24px;
     }
-    .commit-title {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: var(--ink);
+    .pillar h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 24px;
+      margin-bottom: 14px;
     }
-    .commit-body {
-      font-size: 0.92rem;
-      color: var(--ink-light);
-      line-height: 1.7;
+    .pillar p {
+      font-size: 15px;
+      color: var(--ink-soft);
     }
 
-    /* ── HOME PLANS ── */
+    /* ---------- AVA BANNER ---------- */
+    .ava-banner { background: var(--ink); color: var(--cream); }
+    .ava-banner .section-label { color: var(--clay); }
+    .ava-banner h2 { color: var(--cream); max-width: 600px; }
+    .ava-banner h2 em { color: var(--clay); }
+    .ava-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+    .ava-sub {
+      font-size: 17px;
+      color: #c8bfb4;
+      max-width: 520px;
+      margin-top: 16px;
+    }
+    .ava-banner .btn {
+      background: var(--clay);
+      border-color: var(--clay);
+      color: var(--cream);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ava-banner .btn:hover { background: transparent; color: var(--clay); }
+    @media (max-width: 880px) {
+      .ava-banner-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .project {
+      background: var(--cream-deep);
+      padding: 40px 36px;
+      border: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+    .project-status {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 24px;
+    }
+    .project h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    .project-loc {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink-mute);
+      margin-bottom: 24px;
+    }
+    .project p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+    .project dl {
+      font-size: 13px;
+      border-top: 1px solid var(--rule);
+      padding-top: 20px;
+    }
+    .project dl div {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+    }
+    .project dt {
+      color: var(--ink-mute);
+      letter-spacing: 0.04em;
+    }
+    .project dd { color: var(--ink); font-weight: 400; }
+
+    /* ---------- HOME PLANS ---------- */
+    .plans-intro {
+      font-size: 18px;
+      color: var(--ink-soft);
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
     .plans {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 32px;
+      margin-top: 56px;
     }
-    .plan-card {
-      background: var(--paper);
-      border: 1px solid var(--rule);
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .plan-card:hover { border-color: var(--terra); transform: translateY(-3px); }
-
-    .plan-image {
-      aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg, #e8dfd3 0%, #d9cfc4 100%);
-      position: relative;
-      overflow: hidden;
+    .plan {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
     }
-    .plan-image img {
+    .plan-img {
+      aspect-ratio: 4 / 3;
+      background: var(--cream-deep);
+      margin-bottom: 24px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--rule);
+    }
+    .plan-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    .plan-image-fallback {
-      font-family: 'EB Garamond', serif;
+    .plan h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    .plan-tagline {
+      font-family: var(--serif);
       font-style: italic;
-      font-size: 0.85rem;
-      color: var(--ink-light);
+      font-size: 15px;
+      color: var(--ink-mute);
+      margin-bottom: 18px;
+    }
+    .plan-specs {
+      list-style: none;
+      font-size: 14px;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--rule);
+      padding-top: 16px;
+    }
+    .plan-specs li {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+    .plan-specs li span:last-child {
+      color: var(--ink);
+      font-weight: 400;
+    }
+    .plan-ada {
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+
+    /* ---------- QUOTE ---------- */
+    .quote-block {
+      background: var(--ink);
+      color: var(--cream);
+      border-bottom: 0;
+    }
+    .quote-block .wrap { max-width: 920px; }
+    .quote-block .section-label { color: var(--clay); }
+    blockquote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height: 1.3;
+      margin-bottom: 36px;
+    }
+    blockquote::before {
+      content: "\201C";
+      font-size: 1.2em;
+      color: var(--clay);
+      display: inline;
+      margin-right: 4px;
+    }
+    blockquote::after {
+      content: "\201D";
+      font-size: 1.2em;
+      color: var(--clay);
+    }
+    .quote-block a {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--clay);
+      padding-bottom: 4px;
+      transition: color 0.2s;
+    }
+    .quote-block a:hover { color: var(--clay); }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 70px 0 40px;
+      background: var(--cream);
+    }
+    .footer-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+    .footer-brand {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .footer-brand-sub {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 20px;
+    }
+    .footer-tag {
+      font-size: 14px;
+      color: var(--ink-soft);
+      max-width: 360px;
+    }
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--moss); }
+    .copyright {
+      border-top: 1px solid var(--rule);
+      padding-top: 24px;
+      font-size: 12px;
+      color: var(--ink-mute);
       letter-spacing: 0.04em;
     }
 
-    .plan-body { padding: 1.8rem 1.8rem 2.2rem; }
-    .plan-meta {
-      font-size: 0.66rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--terra);
-      font-weight: 500;
-      margin-bottom: 0.7rem;
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 880px) {
+      .wrap { padding: 0 24px; }
+      .pillars, .projects, .plans, .footer-row {
+        grid-template-columns: 1fr;
+      }
+      .pillar {
+        border-right: 0;
+        border-bottom: 1px solid var(--rule);
+        padding: 36px 0;
+      }
+      .pillar:last-child { border-bottom: 0; }
+      nav ul { gap: 20px; }
+      nav a { font-size: 12px; }
+      .hero { padding: 70px 0 90px; }
+      section { padding: 80px 0; }
+      .hero-meta { display: none; }
     }
-    .plan-name {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-    .plan-stats {
-      font-size: 0.78rem;
-      color: var(--ink-light);
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-    }
-    .plan-desc {
-      font-size: 0.88rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-    }
-
-    /* ── PROJECTS ── */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .project-card {
-      background: var(--paper);
-      border: 1px solid var(--rule);
-      padding: 2.2rem 2rem;
-      position: relative;
-      transition: background 0.25s;
-    }
-    .project-card:hover { background: #fff; }
-
-    .project-status {
-      display: inline-block;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--sage);
-      border: 1px solid var(--sage);
-      padding: 0.2rem 0.6rem;
-      margin-bottom: 1.4rem;
-    }
-    .project-status.planning { color: var(--terra-muted); border-color: var(--terra-muted); }
-    .project-status.pipeline { color: var(--ink-light); border-color: var(--ink-light); }
-
-    .project-name {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.55rem;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-      line-height: 1.2;
-    }
-    .project-location {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      margin-bottom: 1.2rem;
-    }
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.75;
-      margin-bottom: 1.4rem;
-    }
-    .project-detail {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.74rem;
-      padding: 0.5rem 0;
-      border-top: 1px solid var(--rule);
-    }
-    .project-detail dt {
-      color: var(--ink-light);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .project-detail dd { color: var(--ink); font-weight: 500; }
-
-    /* ── TRUST NOTE ── */
-    .trust-note {
-      background: var(--cream);
-      border-left: 3px solid var(--terra);
-      padding: 4rem 5rem;
-    }
-    .trust-note-inner { max-width: 660px; }
-    .trust-quote {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.4rem;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.6;
-      margin-bottom: 1.4rem;
-    }
-    .trust-link {
-      font-size: 0.74rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--terra);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .trust-link:hover { color: var(--ink); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      color: rgba(246,241,235,0.65);
-      padding: 3.5rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: end;
-      gap: 2rem;
-    }
-    .footer-brand-name {
-      font-family: 'EB Garamond', serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--cream);
-      margin-bottom: 0.3rem;
-    }
-    .footer-brand-sub {
-      font-size: 0.62rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(246,241,235,0.4);
-    }
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: rgba(246,241,235,0.55);
-      margin-top: 1rem;
-      line-height: 1.6;
-      max-width: 36ch;
-    }
-    .footer-right {
-      text-align: right;
-      font-size: 0.82rem;
-    }
-    .footer-right a {
-      color: rgba(246,241,235,0.7);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-    .footer-right a:hover { color: var(--terra); }
-    .footer-copy {
-      font-size: 0.7rem;
-      color: rgba(246,241,235,0.35);
-      letter-spacing: 0.1em;
-      margin-top: 1rem;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav, .hero, .section, .trust-note, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links a { font-size: 0.7rem; letter-spacing: 0.12em; }
-      .hero-locator { display: none; }
-      .commitments, .plans, .projects { grid-template-columns: 1fr; gap: 2rem; }
-      footer { grid-template-columns: 1fr; }
-      .footer-right { text-align: left; }
+    @media (max-width: 540px) {
+      nav { display: none; }
+      .logo img { height: 48px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="announce">This site is being built alongside our projects — more coming soon</div>
+  <div class="banner">
+    This site is being built alongside our projects — <em>more coming soon.</em>
+  </div>
 
-  <nav>
-    <a class="nav-logo" href="#">
-      <img src="https://brighthomeinvestments.net/images/logo.svg" alt="Bright Home Investments" onerror="this.remove()">
-      <span class="nav-logo-text">
-        <div class="nav-logo-name">Bright Home</div>
-        <div class="nav-logo-sub">Investments</div>
-      </span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#plans">Home Plans</a></li>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="mailto:hello@brighthomeinvestments.com">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <div class="wrap header-row">
+      <div class="logo">
+        <a href="/" aria-label="Bright Home Investments">
+          <img src="/images/logo.svg" alt="Bright Home Investments">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#ava">Ava</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="mailto:hello@brighthomeinvestments.com">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <section class="hero">
-    <div class="hero-locator">Missouri Ozarks</div>
-    <div class="hero-inner">
-      <div class="eyebrow">Rural Affordable Housing · Missouri Ozarks</div>
+    <div class="wrap">
+      <div class="eyebrow">Rural Affordable Housing<span class="dot"></span>Missouri Ozarks</div>
       <h1>Quality homes working families can <em>actually</em> afford.</h1>
-      <p class="hero-lead">We develop modest, well-built homes in small Missouri communities — designed to last, priced to stay within reach, and built for the people who already belong here.</p>
-      <a href="#projects" class="btn btn-primary">See Our Projects</a>
+      <p class="hero-sub">We develop modest, well-built homes in small Missouri communities — designed to last, priced to stay within reach, and built for the people who already belong here.</p>
+      <a href="#ava" class="btn">See What We're Building</a>
+      <div class="hero-meta">Missouri Ozarks</div>
     </div>
   </section>
 
-  <section class="section section-cream" id="mission">
-    <div class="section-eyebrow">Our Commitment</div>
-    <h2 class="section-title">Built for real life. <em>Priced to stay that way.</em></h2>
-    <p class="commitment-intro">Bright Home Investments was formed around a simple conviction: working families deserve stable, well-built homes without impossible trade-offs. We design small-scale developments that fit the land and stay affordable over time — not just at sale, but for the families who come after. We partner with community land trusts to keep the land permanently affordable, so the value we create stays in the community rather than being extracted from it.</p>
+  <section id="mission">
+    <div class="wrap">
+      <div class="section-label">Our Commitment</div>
+      <h2>Built for real life. <em>Priced to stay that way.</em></h2>
+      <p class="mission-lead">Bright Home Investments was formed around a simple conviction: working families deserve stable, well-built homes without impossible trade-offs. We design small-scale developments that fit the land and stay affordable over time — not just at sale, but for the families who come after.</p>
 
-    <div class="commitments">
-      <div>
-        <div class="commit-num">01</div>
-        <h3 class="commit-title">Built to last</h3>
-        <p class="commit-body">Engineered for safety, efficiency, and dignity — not the cheapest option that passes code.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <h3>Built to last</h3>
+          <p>Engineered for safety, efficiency, and sustainability — not the cheapest option that passes code.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <h3>Homes for families who live and work here</h3>
+          <p>Homes designed to stay within reach of the families who need them most.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <h3>Rooted in community, built for life</h3>
+          <p>Small developments that fit the landscape and the community.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="ava" class="ava-banner">
+    <div class="wrap ava-banner-inner">
       <div>
-        <div class="commit-num">02</div>
-        <h3 class="commit-title">Permanently affordable</h3>
-        <p class="commit-body">Ground lease partnerships ensure homes remain within reach for the next family, not just the first.</p>
+        <div class="section-label">Now Building</div>
+        <h2>New homes coming to <em>Ava, Missouri.</em></h2>
       </div>
-      <div>
-        <div class="commit-num">03</div>
-        <h3 class="commit-title">Place-rooted</h3>
-        <p class="commit-body">Small developments that fit the landscape and the community — not transplanted from somewhere else.</p>
-      </div>
+      <a href="/astoria-ln" class="btn">Learn More</a>
     </div>
   </section>
 
-  <section class="section" id="plans">
-    <div class="section-eyebrow">Home Plans</div>
-    <h2 class="section-title">Modest homes, <em>built well.</em></h2>
 
-    <div class="plans">
-      <article class="plan-card">
-        <div class="plan-image">
-          <img src="assets/home-1268-modern.png" alt="Plan 1268 — modern exterior" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'plan-image-fallback',textContent:'Plan 1268 — rendering coming soon'}))">
-        </div>
-        <div class="plan-body">
-          <div class="plan-meta">Plan 1268</div>
-          <h3 class="plan-name">The Two-Bedroom</h3>
-          <p class="plan-stats">2 bed · 2 bath · 1,268 sq ft</p>
-          <p class="plan-desc">A right-sized home for couples, small families, and downsizers. Open living, efficient layout, and finishes that hold up to real life.</p>
-        </div>
-      </article>
 
-      <article class="plan-card">
-        <div class="plan-image">
-          <img src="assets/home-1736-modern.png" alt="Plan 1736 — modern exterior" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'plan-image-fallback',textContent:'Plan 1736 — rendering coming soon'}))">
-        </div>
-        <div class="plan-body">
-          <div class="plan-meta">Plan 1736</div>
-          <h3 class="plan-name">The Three-Bedroom</h3>
-          <p class="plan-stats">3 bed · 2 bath · 1,736 sq ft</p>
-          <p class="plan-desc">Room to grow without the carrying cost of a too-big house. Designed for working families who need space that earns its keep.</p>
-        </div>
-      </article>
 
-      <article class="plan-card">
-        <div class="plan-image">
-          <img src="assets/home-custom.png" alt="Custom plan exterior" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'plan-image-fallback',textContent:'Additional plans in development'}))">
-        </div>
-        <div class="plan-body">
-          <div class="plan-meta">More to come</div>
-          <h3 class="plan-name">Additional Plans</h3>
-          <p class="plan-stats">In development</p>
-          <p class="plan-desc">We're refining a small set of plans suited to rural Missouri lots and panelized construction — durable, efficient, and USDA/FHA financeable.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section-cream" id="projects">
-    <div class="section-eyebrow">Active Projects</div>
-    <h2 class="section-title">Local <em>housing initiatives.</em></h2>
-
-    <div class="projects">
-      <article class="project-card">
-        <span class="project-status">Active</span>
-        <h3 class="project-name">Ava Development</h3>
-        <div class="project-location">Ava, Missouri</div>
-        <p class="project-desc">A for-sale development in Ava with finalized home designs and finishes. Modest, well-built homes sized for working families — designed to meet USDA and FHA financing requirements.</p>
-        <dl class="project-detail"><dt>Location</dt><dd>Ava, MO</dd></dl>
-        <dl class="project-detail"><dt>Financing</dt><dd>USDA · FHA</dd></dl>
-        <dl class="project-detail"><dt>Structure</dt><dd>CLT ground lease</dd></dl>
-      </article>
-
-      <article class="project-card">
-        <span class="project-status planning">Early Planning</span>
-        <h3 class="project-name">White Oak Cove</h3>
-        <div class="project-location">Douglas County, Missouri</div>
-        <p class="project-desc">A small-scale for-sale development designed to fit the natural Ozarks landscape. Panelized construction — efficient, precise, and well-suited to rural terrain — paired with a community land trust ground lease.</p>
-        <dl class="project-detail"><dt>County</dt><dd>Douglas Co., MO</dd></dl>
-        <dl class="project-detail"><dt>Financing</dt><dd>USDA · FHA</dd></dl>
-        <dl class="project-detail"><dt>Structure</dt><dd>CLT ground lease</dd></dl>
-      </article>
-
-      <article class="project-card">
-        <span class="project-status pipeline">Pipeline</span>
-        <h3 class="project-name">Next Site</h3>
-        <div class="project-location">Missouri Ozarks</div>
-        <p class="project-desc">Site search is active. We're evaluating platted lots in incorporated towns across the region — flat terrain, city utilities, clear title.</p>
-        <dl class="project-detail"><dt>Region</dt><dd>Ozarks</dd></dl>
-        <dl class="project-detail"><dt>Status</dt><dd>Sourcing</dd></dl>
-        <dl class="project-detail"><dt>Timeline</dt><dd>2025–2026</dd></dl>
-      </article>
-    </div>
-  </section>
-
-  <section class="trust-note">
-    <div class="trust-note-inner">
-      <p class="trust-quote">"We build the homes. Our land trust partner holds the land — permanently — so that affordability isn't just a promise at closing. It's built into the structure."</p>
-      <a href="#" class="trust-link">How the CLT model works →</a>
-    </div>
-  </section>
 
   <footer>
-    <div>
-      <div class="footer-brand-name">Bright Home</div>
-      <div class="footer-brand-sub">Investments LLC</div>
-      <p class="footer-tagline">Rural affordable housing development in the Missouri Ozarks.</p>
-    </div>
-    <div class="footer-right">
-      <a href="mailto:hello@brighthomeinvestments.com">hello@brighthomeinvestments.com</a>
-      <a href="#">Missouri Ozarks</a>
-      <div class="footer-copy">© 2026 Bright Home Investments LLC · All rights reserved</div>
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <div class="footer-brand">Bright Home Investments</div>
+          <div class="footer-brand-sub">LLC</div>
+          <p class="footer-tag">Rural affordable housing development in the Missouri Ozarks.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@brighthomeinvestments.com">hello@brighthomeinvestments.com</a>
+          <a href="#">Missouri Ozarks</a>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#ava">Ava</a>
+          <a href="#mission">Mission</a>
+        </div>
+      </div>
+      <div class="copyright">© 2026 Bright Home Investments LLC · All rights reserved</div>
     </div>
   </footer>
 
