@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bright Home Investments — Quality homes in the Missouri Ozarks</title>
-  <meta name="description" content="Quality, modest homes that working families can actually afford. Rural affordable housing development in the Missouri Ozarks.">
+  <title>Astoria Ln — New Homes Coming to Ava, Missouri | Bright Home Investments</title>
+  <meta name="description" content="New, energy-efficient homes coming to Ava, Missouri. Reserve your spot for the Astoria Ln neighborhood — sustainable, efficient, and built to be affordable. USDA, FHA, and MHDC eligible.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
       --sans: "Raleway", system-ui, sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
 
@@ -37,11 +37,59 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 32px;
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(44px, 6.4vw, 84px);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      max-width: 920px;
+      margin-bottom: 36px;
     }
+    h1 em { font-style: italic; font-weight: 500; color: var(--moss); }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(34px, 4.4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.005em;
+      margin-bottom: 32px;
+      max-width: 760px;
+    }
+    h2 em { font-style: italic; font-weight: 500; color: var(--moss); }
+
+    section { padding: 80px 0; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--ink);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn:hover { background: transparent; color: var(--ink); }
+    .btn-clay { background: var(--clay); border-color: var(--clay); color: var(--cream); }
+    .btn-clay:hover { background: transparent; color: var(--clay); }
 
     /* ---------- TOP BANNER ---------- */
     .banner {
@@ -53,34 +101,14 @@
       text-align: center;
       padding: 10px 24px;
     }
-    .banner em { font-family: var(--serif); font-style: italic; font-weight: 500; }
+    .banner em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--clay); }
 
     /* ---------- HEADER ---------- */
-    header {
-      border-bottom: 1px solid var(--rule);
-      padding: 22px 0;
-      background: var(--cream);
-    }
-    .header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .logo a {
-      display: inline-block;
-      line-height: 0;
-    }
-    .logo img {
-      height: 88px;
-      width: auto;
-      display: block;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 36px;
-    }
+    header { border-bottom: 1px solid var(--rule); padding: 22px 0; background: var(--cream); position: sticky; top: 0; z-index: 50; }
+    .header-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .logo a { display: inline-block; line-height: 0; }
+    .logo img { height: 88px; width: auto; display: block; }
+    nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
     nav a {
       color: var(--ink);
       text-decoration: none;
@@ -91,12 +119,16 @@
       transition: color 0.2s;
     }
     nav a:hover { color: var(--moss); }
+    nav a.nav-cta { color: var(--clay); font-weight: 500; }
 
     /* ---------- HERO ---------- */
     .hero {
-      padding: 110px 0 130px;
+      padding: 110px 0 120px;
       border-bottom: 1px solid var(--rule);
       position: relative;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(92,110,79,0.07), transparent 55%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
     }
     .eyebrow {
       font-size: 12px;
@@ -107,401 +139,159 @@
       margin-bottom: 32px;
     }
     .eyebrow .dot {
-      display: inline-block;
-      width: 4px;
-      height: 4px;
-      background: var(--moss);
-      border-radius: 50%;
-      margin: 0 12px;
-      vertical-align: middle;
+      display: inline-block; width: 4px; height: 4px;
+      background: var(--moss); border-radius: 50%;
+      margin: 0 12px; vertical-align: middle;
     }
-    h1 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(44px, 6.4vw, 84px);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      max-width: 920px;
-      margin-bottom: 36px;
+    .hero-sub { font-size: 19px; max-width: 600px; color: var(--ink-soft); margin-bottom: 44px; }
+    .hero-meta {
+      position: absolute; right: 32px; bottom: 28px;
+      font-family: var(--serif); font-style: italic;
+      font-size: 15px; color: var(--ink-mute);
     }
-    h1 em {
-      font-style: italic;
-      font-weight: 500;
-      color: var(--moss);
+
+    /* ---------- VALUE PROPS ---------- */
+    .pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; border-top: 1px solid var(--rule); margin-top: 56px;
     }
-    .hero-sub {
-      font-size: 19px;
-      max-width: 620px;
-      color: var(--ink-soft);
-      margin-bottom: 48px;
+    .pillar { padding: 48px 32px 16px 0; border-right: 1px solid var(--rule); }
+    .pillar:last-child { border-right: 0; padding-right: 0; }
+    .pillar-num { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--clay); margin-bottom: 24px; }
+    .pillar h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin-bottom: 14px; }
+    .pillar p { font-size: 15px; color: var(--ink-soft); }
+
+    /* ---------- PLANS ---------- */
+    .plans-section { background: var(--cream-deep); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+    .plan-card { background: var(--cream); border: 1px solid var(--rule); display: flex; flex-direction: column; }
+    .plan-img {
+      position: relative; aspect-ratio: 4 / 3; overflow: hidden;
+      background: var(--cream-deep); border-bottom: 1px solid var(--rule);
     }
-    .btn {
-      display: inline-block;
-      padding: 16px 32px;
-      background: var(--ink);
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: 1px solid var(--ink);
+    .plan-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .plan-img .placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px; text-align: center;
+      background:
+        repeating-linear-gradient(45deg, rgba(92,110,79,0.05) 0 12px, transparent 12px 24px),
+        var(--cream-deep);
+      color: var(--ink-mute);
+    }
+    .plan-img .placeholder .ph-name { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--moss); }
+    .plan-img .placeholder .ph-note { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .dt-toggle {
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      display: flex; background: rgba(43,37,32,0.78); backdrop-filter: blur(4px);
+      border: 1px solid rgba(250,247,242,0.25);
+    }
+    .dt-toggle button {
+      font-family: var(--sans); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+      padding: 7px 16px; background: transparent; color: rgba(250,247,242,0.7); border: 0;
       transition: all 0.2s;
     }
-    .btn:hover { background: transparent; color: var(--ink); }
+    .dt-toggle button + button { border-left: 1px solid rgba(250,247,242,0.25); }
+    .dt-toggle button.active { background: var(--clay); color: var(--cream); }
+    .plan-body { padding: 28px 26px 30px; flex: 1; display: flex; flex-direction: column; }
+    .plan-name { font-family: var(--serif); font-weight: 500; font-size: 28px; margin-bottom: 6px; }
+    .plan-specs { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 18px; }
+    .plan-desc { font-size: 15px; color: var(--ink-soft); margin-bottom: 24px; flex: 1; }
+    .plan-price { border-top: 1px solid var(--rule); padding-top: 18px; display: flex; justify-content: space-between; align-items: baseline; }
+    .plan-price .label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); }
+    .plan-price .value { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--clay); }
 
-    .hero-meta {
-      position: absolute;
-      right: 32px;
-      bottom: 28px;
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 15px;
-      color: var(--ink-mute);
-    }
+    /* ---------- BUILD / LOCATION ---------- */
+    .build-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; }
+    .fact-list { border-top: 1px solid var(--rule); }
+    .fact-row { display: flex; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+    .fact-row .k { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); padding-top: 3px; }
+    .fact-row .v { text-align: right; color: var(--ink); font-size: 16px; max-width: 60%; }
+    .build-copy p { color: var(--ink-soft); margin-bottom: 20px; font-size: 17px; }
+    .fin-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .fin-badge { border: 1px solid var(--moss); color: var(--moss); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; }
 
-    /* ---------- SECTIONS ---------- */
-    section { padding: 110px 0; border-bottom: 1px solid var(--rule); }
+    /* ---------- RESERVE FORM ---------- */
+    .reserve { background: var(--ink); color: var(--cream); border-top: 1px solid var(--ink); }
+    .reserve .section-label { color: var(--clay); }
+    .reserve h2 { color: var(--cream); }
+    .reserve h2 em { color: var(--clay); }
+    .reserve-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: start; margin-top: 16px; }
+    .reserve-lede { font-size: 19px; color: rgba(250,247,242,0.8); max-width: 420px; }
+    .reserve-soft { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--clay); margin-top: 28px; }
 
-    .section-label {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--moss);
-      margin-bottom: 28px;
+    .toggle { display: flex; border: 1px solid rgba(250,247,242,0.22); margin-bottom: 28px; }
+    .toggle button {
+      flex: 1; font-family: var(--sans); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+      padding: 15px 12px; background: transparent; color: rgba(250,247,242,0.6);
+      border: 0; transition: all 0.2s;
     }
+    .toggle button + button { border-left: 1px solid rgba(250,247,242,0.22); }
+    .toggle button.active { background: var(--clay); color: var(--cream); }
+    .pane { display: none; }
+    .pane.active { display: grid; gap: 20px; }
 
-    h2 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(34px, 4.4vw, 54px);
-      line-height: 1.1;
-      letter-spacing: -0.005em;
-      margin-bottom: 32px;
-      max-width: 760px;
+    form { display: grid; gap: 20px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,247,242,0.7); }
+    .field input, .field select, .field textarea {
+      font-family: var(--sans); font-size: 16px; font-weight: 300;
+      background: rgba(250,247,242,0.04); color: var(--cream);
+      border: 1px solid rgba(250,247,242,0.22); padding: 14px 16px;
+      transition: border-color 0.2s, background 0.2s;
     }
-    h2 em { font-style: italic; font-weight: 500; }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(250,247,242,0.4); }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--clay); background: rgba(250,247,242,0.07);
+    }
+    .field select option { color: var(--ink); }
+    .field textarea { resize: vertical; min-height: 90px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    form .btn { justify-self: start; margin-top: 8px; }
+    .form-note { font-size: 13px; color: rgba(250,247,242,0.5); }
 
-    /* ---------- MISSION ---------- */
-    .mission-lead {
-      font-size: 19px;
-      color: var(--ink-soft);
-      max-width: 720px;
-      margin-bottom: 24px;
+    .form-success {
+      display: none; padding: 40px; border: 1px solid var(--clay);
+      background: rgba(185,122,78,0.08); text-align: center;
     }
-    .mission-lead + .mission-lead { margin-bottom: 80px; }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--rule);
-      margin-top: 60px;
-    }
-    .pillar {
-      padding: 48px 32px 16px 0;
-      border-right: 1px solid var(--rule);
-    }
-    .pillar:last-child { border-right: 0; padding-right: 0; }
-    .pillar-num {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 22px;
-      color: var(--clay);
-      margin-bottom: 24px;
-    }
-    .pillar h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-    .pillar p {
-      font-size: 15px;
-      color: var(--ink-soft);
-    }
-
-    /* ---------- AVA BANNER ---------- */
-    .ava-banner { background: var(--ink); color: var(--cream); }
-    .ava-banner .section-label { color: var(--clay); }
-    .ava-banner h2 { color: var(--cream); max-width: 600px; }
-    .ava-banner h2 em { color: var(--clay); }
-    .ava-banner-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 48px;
-    }
-    .ava-sub {
-      font-size: 17px;
-      color: #c8bfb4;
-      max-width: 520px;
-      margin-top: 16px;
-    }
-    .ava-banner .btn {
-      background: var(--clay);
-      border-color: var(--clay);
-      color: var(--cream);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .ava-banner .btn:hover { background: transparent; color: var(--clay); }
-    @media (max-width: 880px) {
-      .ava-banner-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ---------- PROJECTS ---------- */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 56px;
-    }
-    .project {
-      background: var(--cream-deep);
-      padding: 40px 36px;
-      border: 1px solid var(--rule);
-      display: flex;
-      flex-direction: column;
-    }
-    .project-status {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--clay);
-      margin-bottom: 24px;
-    }
-    .project h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 28px;
-      margin-bottom: 6px;
-    }
-    .project-loc {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 16px;
-      color: var(--ink-mute);
-      margin-bottom: 24px;
-    }
-    .project p {
-      font-size: 15px;
-      color: var(--ink-soft);
-      margin-bottom: 28px;
-      flex-grow: 1;
-    }
-    .project dl {
-      font-size: 13px;
-      border-top: 1px solid var(--rule);
-      padding-top: 20px;
-    }
-    .project dl div {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-    }
-    .project dt {
-      color: var(--ink-mute);
-      letter-spacing: 0.04em;
-    }
-    .project dd { color: var(--ink); font-weight: 400; }
-
-    /* ---------- HOME PLANS ---------- */
-    .plans-intro {
-      font-size: 18px;
-      color: var(--ink-soft);
-      max-width: 680px;
-      margin-bottom: 16px;
-    }
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 56px;
-    }
-    .plan {
-      display: flex;
-      flex-direction: column;
-    }
-    .plan-img {
-      aspect-ratio: 4 / 3;
-      background: var(--cream-deep);
-      margin-bottom: 24px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid var(--rule);
-    }
-    .plan-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .plan h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-    .plan-tagline {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 15px;
-      color: var(--ink-mute);
-      margin-bottom: 18px;
-    }
-    .plan-specs {
-      list-style: none;
-      font-size: 14px;
-      color: var(--ink-soft);
-      border-top: 1px solid var(--rule);
-      padding-top: 16px;
-    }
-    .plan-specs li {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-    }
-    .plan-specs li span:last-child {
-      color: var(--ink);
-      font-weight: 400;
-    }
-    .plan-ada {
-      margin-top: 14px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--moss);
-    }
-
-    /* ---------- QUOTE ---------- */
-    .quote-block {
-      background: var(--ink);
-      color: var(--cream);
-      border-bottom: 0;
-    }
-    .quote-block .wrap { max-width: 920px; }
-    .quote-block .section-label { color: var(--clay); }
-    blockquote {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(26px, 3.4vw, 40px);
-      line-height: 1.3;
-      margin-bottom: 36px;
-    }
-    blockquote::before {
-      content: "\201C";
-      font-size: 1.2em;
-      color: var(--clay);
-      display: inline;
-      margin-right: 4px;
-    }
-    blockquote::after {
-      content: "\201D";
-      font-size: 1.2em;
-      color: var(--clay);
-    }
-    .quote-block a {
-      color: var(--cream);
-      text-decoration: none;
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--clay);
-      padding-bottom: 4px;
-      transition: color 0.2s;
-    }
-    .quote-block a:hover { color: var(--clay); }
+    .form-success.show { display: block; }
+    .form-success h3 { font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--cream); margin-bottom: 12px; }
+    .form-success p { color: rgba(250,247,242,0.8); }
 
     /* ---------- FOOTER ---------- */
-    footer {
-      padding: 70px 0 40px;
-      background: var(--cream);
-    }
-    .footer-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 60px;
-    }
-    .footer-brand {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 500;
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-    .footer-brand-sub {
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-bottom: 20px;
-    }
-    .footer-tag {
-      font-size: 14px;
-      color: var(--ink-soft);
-      max-width: 360px;
-    }
-    .footer-col h4 {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-bottom: 16px;
-    }
-    .footer-col a {
-      display: block;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 14px;
-      margin-bottom: 8px;
-      transition: color 0.2s;
-    }
+    footer { padding: 70px 0 40px; background: var(--cream); }
+    .footer-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+    .footer-brand { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; margin-bottom: 8px; }
+    .footer-brand-sub { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 20px; }
+    .footer-tag { font-size: 14px; color: var(--ink-soft); max-width: 360px; }
+    .footer-col h4 { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 16px; }
+    .footer-col a { display: block; color: var(--ink); text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
     .footer-col a:hover { color: var(--moss); }
-    .copyright {
-      border-top: 1px solid var(--rule);
-      padding-top: 24px;
-      font-size: 12px;
-      color: var(--ink-mute);
-      letter-spacing: 0.04em;
-    }
+    .footer-bottom { border-top: 1px solid var(--rule); padding-top: 28px; font-size: 12px; color: var(--ink-mute); letter-spacing: 0.04em; }
 
     /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 880px) {
+    @media (max-width: 860px) {
       .wrap { padding: 0 24px; }
-      .pillars, .projects, .plans, .footer-row {
-        grid-template-columns: 1fr;
-      }
-      .pillar {
-        border-right: 0;
-        border-bottom: 1px solid var(--rule);
-        padding: 36px 0;
-      }
-      .pillar:last-child { border-bottom: 0; }
-      nav ul { gap: 20px; }
-      nav a { font-size: 12px; }
-      .hero { padding: 70px 0 90px; }
-      section { padding: 80px 0; }
+      .hero { padding: 64px 0 80px; }
       .hero-meta { display: none; }
-    }
-    @media (max-width: 540px) {
-      nav { display: none; }
-      .logo img { height: 48px; }
+      .logo img { height: 52px; }
+      nav ul { gap: 18px; }
+      nav a { font-size: 11px; }
+      nav .nav-hide { display: none; }
+      .pillars, .plans, .build-grid, .reserve-grid, .footer-row { grid-template-columns: 1fr; }
+      .pillar { border-right: 0; border-bottom: 1px solid var(--rule); padding: 32px 0; }
+      .pillar:last-child { border-bottom: 0; }
+      .build-grid, .reserve-grid { gap: 40px; }
+      .field-row { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
     }
   </style>
 </head>
 <body>
 
   <div class="banner">
-    This site is being built alongside our projects — <em>more coming soon.</em>
+    Reservations are open for <em>Astoria Ln</em> — Ava, Missouri.
   </div>
 
   <header>
@@ -513,86 +303,410 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#ava">Ava</a></li>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="mailto:hello@brighthomeinvestments.com">Contact</a></li>
+          <li><a href="#plans">Plans</a></li>
+          <li class="nav-hide"><a href="#build">The Neighborhood</a></li>
+          <li><a href="#reserve" class="nav-cta">Reserve</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow">Rural Affordable Housing<span class="dot"></span>Missouri Ozarks</div>
-      <h1>Quality homes working families can <em>actually</em> afford.</h1>
-      <p class="hero-sub">We develop modest, well-built homes in small Missouri communities — designed to last, priced to stay within reach, and built for the people who already belong here.</p>
-      <a href="#ava" class="btn">See What We're Building</a>
-      <div class="hero-meta">Missouri Ozarks</div>
+      <div class="eyebrow">Ava, Missouri <span class="dot"></span> New Construction</div>
+      <h1>New homes coming to <em>Ava.</em></h1>
+      <p class="hero-sub">
+        A new neighborhood of well-built, energy-efficient homes — designed for the
+        people who already live and work here. Reserve your spot and we'll keep you
+        posted as things take shape.
+      </p>
+      <a href="#reserve" class="btn btn-clay">Save My Spot</a>
     </div>
+    <div class="hero-meta">Shull Avenue · Ava, Missouri</div>
   </section>
 
-  <section id="mission">
+  <!-- VALUE PROPS -->
+  <section>
     <div class="wrap">
-      <div class="section-label">Our Commitment</div>
-      <h2>Built for real life. <em>Priced to stay that way.</em></h2>
-      <p class="mission-lead">Bright Home Investments was formed around a simple conviction: working families deserve stable, well-built homes without impossible trade-offs. We design small-scale developments that fit the land and stay affordable over time — not just at sale, but for the families who come after.</p>
-
+      <div class="section-label">Why Astoria Ln</div>
+      <h2>Modern homes, <em>built to stay within reach.</em></h2>
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-num">01</div>
-          <h3>Built to last</h3>
-          <p>Engineered for safety, efficiency, and sustainability — not the cheapest option that passes code.</p>
+          <h3>Sustainable</h3>
+          <p>Built with a high-performance, continuous-insulation envelope — homes designed to be comfortable, durable, and easy on the land.</p>
         </div>
         <div class="pillar">
           <div class="pillar-num">02</div>
-          <h3>Homes for families who live and work here</h3>
-          <p>Homes designed to stay within reach of the families who need them most.</p>
+          <h3>Efficient</h3>
+          <p>A tight, well-insulated build means lower utility bills month after month — efficiency you feel in everyday living costs.</p>
         </div>
         <div class="pillar">
           <div class="pillar-num">03</div>
-          <h3>Rooted in community, built for life</h3>
-          <p>Small developments that fit the landscape and the community.</p>
+          <h3>Affordable</h3>
+          <p>Right-sized plans priced for working families, and built to qualify for USDA, FHA, and MHDC financing.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="ava" class="ava-banner">
-    <div class="wrap ava-banner-inner">
-      <div>
-        <div class="section-label">Now Building</div>
-        <h2>New homes coming to <em>Ava, Missouri.</em></h2>
+  <!-- PLANS -->
+  <section class="plans-section" id="plans">
+    <div class="wrap">
+      <div class="section-label">The Homes</div>
+      <h2>Three plans to <em>choose from.</em></h2>
+      <div class="plans">
+
+        <!-- FIONA -->
+        <div class="plan-card">
+          <div class="plan-img">
+            <img src="/images/Fiona.jpg" alt="The Fiona home plan"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="placeholder" style="display:none;">
+              <span class="ph-name">Fiona</span>
+              <span class="ph-note">Photo coming soon</span>
+            </div>
+          </div>
+          <div class="plan-body">
+            <div class="plan-name">Fiona</div>
+            <div class="plan-specs">2 Bed + Office / 3 Bed · 1,080 SF</div>
+            <p class="plan-desc">A flexible floor plan that lives the way you need it to — two bedrooms plus an office, or a conforming third bedroom. Efficient, low-maintenance, and easy to call home.</p>
+            <div class="plan-price">
+              <span class="label">Pricing</span>
+              <span class="value">Coming soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORCHID -->
+        <div class="plan-card">
+          <div class="plan-img">
+            <img src="/images/Orchid.jpg" alt="The Orchid home plan"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="placeholder" style="display:none;">
+              <span class="ph-name">Orchid</span>
+              <span class="ph-note">Photo coming soon</span>
+            </div>
+          </div>
+          <div class="plan-body">
+            <div class="plan-name">Orchid</div>
+            <div class="plan-specs">2 Bed · 1,268 SF</div>
+            <p class="plan-desc">A roomier two-bedroom with an open, modern layout and energy-smart finishes — comfortable space without the carrying cost of a too-big house.</p>
+            <div class="plan-price">
+              <span class="label">Pricing</span>
+              <span class="value">Coming soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOG TROT -->
+        <div class="plan-card">
+          <div class="plan-img">
+            <img src="/images/DogTrot_Modern.jpg" alt="The Dog Trot home plan — Modern elevation" class="dt-render" data-style="Modern"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.placeholder').style.display='flex';this.parentElement.querySelector('.dt-toggle').style.display='none';">
+            <img src="/images/DogTrot_Ranch.jpg" alt="The Dog Trot home plan — Ranch elevation" class="dt-render" data-style="Ranch" style="display:none;"
+                 onerror="this.style.display='none';">
+            <div class="dt-toggle">
+              <button type="button" class="active" onclick="dtSwap(this,'Modern')">Modern</button>
+              <button type="button" onclick="dtSwap(this,'Ranch')">Ranch</button>
+            </div>
+            <div class="placeholder" style="display:none;">
+              <span class="ph-name">Dog Trot</span>
+              <span class="ph-note">Photos coming soon</span>
+            </div>
+          </div>
+          <div class="plan-body">
+            <div class="plan-name">Dog Trot</div>
+            <div class="plan-specs">4 Bed · 2,880 SF</div>
+            <p class="plan-desc">Our largest plan — four bedrooms and room to grow, with the same efficient build. Designed for families who need real space that earns its keep.</p>
+            <div class="plan-price">
+              <span class="label">Pricing</span>
+              <span class="value">Coming soon</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <a href="/astoria-ln" class="btn">Learn More</a>
     </div>
   </section>
 
+  <!-- BUILD / NEIGHBORHOOD -->
+  <section id="build">
+    <div class="wrap">
+      <div class="section-label">The Neighborhood</div>
+      <div class="build-grid">
+        <div class="build-copy">
+          <h2>Built right here, <em>on the land.</em></h2>
+          <p>
+            Astoria Ln is a new neighborhood taking shape on Shull Avenue, inside the
+            Ava city limits — on city water, sewer, and electric, in the Ava R-I school district.
+          </p>
+          <p>
+            Every home is built on-site using the Xtrata SABS panelized building system.
+            The panels go up fast and fit tight, which means a stronger, better-insulated
+            home and a more predictable build — not a factory box dropped on a lot, but a
+            real home built on its own foundation.
+          </p>
+          <p>These homes are designed to qualify for the financing local buyers actually use:</p>
+          <div class="fin-badges">
+            <span class="fin-badge">USDA</span>
+            <span class="fin-badge">FHA</span>
+            <span class="fin-badge">MHDC</span>
+          </div>
+        </div>
+        <div>
+          <div class="fact-list">
+            <div class="fact-row"><span class="k">Location</span><span class="v">Shull Avenue, Ava, MO 65608</span></div>
+            <div class="fact-row"><span class="k">Setting</span><span class="v">In-town, city utilities</span></div>
+            <div class="fact-row"><span class="k">Schools</span><span class="v">Ava R-I</span></div>
+            <div class="fact-row"><span class="k">Construction</span><span class="v">Xtrata SABS — built on-site</span></div>
+            <div class="fact-row"><span class="k">Plans</span><span class="v">Fiona · Orchid · Dog Trot</span></div>
+            <div class="fact-row"><span class="k">Financing</span><span class="v">USDA · FHA · MHDC eligible</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- RESERVE -->
+  <section class="reserve" id="reserve">
+    <div class="wrap">
+      <div class="section-label">Stay In Touch</div>
+      <div class="reserve-grid">
+        <div>
+          <h2>Be the first to <em>know.</em></h2>
+          <p class="reserve-lede">
+            No commitment and no pressure. Just want news as plans and pricing come
+            together? Sign up to stay posted. Already thinking about buying? Tell us a
+            little more and we'll reach out personally.
+          </p>
+          <p class="reserve-soft">We'd love to build you a home in Ava.</p>
+        </div>
 
+        <div>
+          <!--
+            ============================================================
+            FORM WIRING — two steps before this goes live:
+            1. EMAIL: create a free Formspree form (formspree.io), then
+               paste its endpoint into FORMSPREE_ENDPOINT below.
+            2. GOOGLE SHEET: deploy a Google Apps Script Web App that
+               appends a row, then paste its /exec URL into SHEET_ENDPOINT.
+               (Leave SHEET_ENDPOINT as "" if you only want email for now.)
+            Both placeholders are in the <script> at the bottom of the page.
+            ============================================================
+          -->
+          <div class="toggle" role="tablist">
+            <button type="button" id="tabUpdates" class="active" onclick="switchPane('updates')">Keep me posted</button>
+            <button type="button" id="tabBuyer" onclick="switchPane('buyer')">I'm interested in buying</button>
+          </div>
 
+          <!-- STAY UPDATED -->
+          <form id="updatesForm" class="pane active" novalidate>
+            <div class="field">
+              <label for="u-name">Name</label>
+              <input type="text" id="u-name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="u-email">Email</label>
+              <input type="email" id="u-email" placeholder="you@email.com" required>
+            </div>
+            <button type="submit" class="btn btn-clay">Keep Me Posted</button>
+            <p class="form-note">Just occasional updates on Astoria Ln — unsubscribe anytime.</p>
+          </form>
 
+          <!-- INTERESTED IN BUYING -->
+          <form id="buyerForm" class="pane" novalidate>
+            <div class="field">
+              <label for="b-name">Name</label>
+              <input type="text" id="b-name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="b-email">Email</label>
+              <input type="email" id="b-email" placeholder="you@email.com" required>
+            </div>
+            <div class="field">
+              <label for="b-plan">Which plan interests you?</label>
+              <select id="b-plan">
+                <option value="">No preference yet</option>
+                <option value="Fiona">Fiona — flexible 2–3 bed, 1,080 SF</option>
+                <option value="Orchid">Orchid — 2 bed, 1,268 SF</option>
+                <option value="Dog Trot">Dog Trot — 4 bed, 2,880 SF</option>
+                <option value="Not sure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="b-timeline">Timeline</label>
+                <select id="b-timeline">
+                  <option value="">Select</option>
+                  <option value="0-3 months">Ready in 0–3 months</option>
+                  <option value="3-6 months">3–6 months</option>
+                  <option value="6-12 months">6–12 months</option>
+                  <option value="Just exploring">Just exploring</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="b-financing">Financing</label>
+                <select id="b-financing">
+                  <option value="">Select</option>
+                  <option value="USDA">USDA</option>
+                  <option value="FHA">FHA</option>
+                  <option value="Cash">Cash</option>
+                  <option value="Not sure">Not sure yet</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="b-preapproved">Are you pre-approved?</label>
+              <select id="b-preapproved">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="In progress">In progress</option>
+                <option value="No">Not yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="b-question">Anything you'd like us to know? (optional)</label>
+              <textarea id="b-question" placeholder="Questions, timing, financing — whatever's on your mind."></textarea>
+            </div>
+            <button type="submit" class="btn btn-clay">Send My Details</button>
+            <p class="form-note">We'll reach out personally — no pressure, no obligation.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <h3>You're on the list.</h3>
+            <p id="successMsg">Thanks — we've got your info and we'll be in touch as things move forward.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="wrap">
       <div class="footer-row">
         <div>
           <div class="footer-brand">Bright Home Investments</div>
-          <div class="footer-brand-sub">LLC</div>
-          <p class="footer-tag">Rural affordable housing development in the Missouri Ozarks.</p>
+          <div class="footer-brand-sub">Residential Development · Southwest Missouri</div>
+          <p class="footer-tag">Well-built, attainable homes for the families who live and work in small Missouri communities.</p>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@brighthomeinvestments.com">hello@brighthomeinvestments.com</a>
-          <a href="#">Missouri Ozarks</a>
+          <h4>Astoria Ln</h4>
+          <a href="#plans">Home Plans</a>
+          <a href="#build">The Neighborhood</a>
+          <a href="#reserve">Stay in Touch</a>
         </div>
         <div class="footer-col">
-          <h4>Explore</h4>
-          <a href="#ava">Ava</a>
-          <a href="#mission">Mission</a>
+          <h4>Company</h4>
+          <a href="/">Home</a>
+          <a href="mailto:brighthomeinvestments@outlook.com">Contact</a>
         </div>
       </div>
-      <div class="copyright">© 2026 Bright Home Investments LLC · All rights reserved</div>
+      <div class="footer-bottom">© 2026 Bright Home Investments, LLC · Ava, Missouri · All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    /* ============================================================
+       PASTE YOUR ENDPOINTS HERE
+       ============================================================ */
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // <-- replace
+    const SHEET_ENDPOINT = ""; // <-- optional Google Apps Script /exec URL; leave "" to skip
+    /* ============================================================ */
+
+    const successBox = document.getElementById('formSuccess');
+    const successMsg = document.getElementById('successMsg');
+
+    function dtSwap(btn, style) {
+      const wrap = btn.closest('.plan-img');
+      wrap.querySelectorAll('.dt-render').forEach(img => {
+        img.style.display = (img.dataset.style === style) ? 'block' : 'none';
+      });
+      wrap.querySelectorAll('.dt-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function switchPane(which) {
+      const isUpdates = which === 'updates';
+      document.getElementById('tabUpdates').classList.toggle('active', isUpdates);
+      document.getElementById('tabBuyer').classList.toggle('active', !isUpdates);
+      document.getElementById('updatesForm').classList.toggle('active', isUpdates);
+      document.getElementById('buyerForm').classList.toggle('active', !isUpdates);
+    }
+
+    async function send(payload, btn) {
+      const requests = [];
+      if (FORMSPREE_ENDPOINT && !FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+        requests.push(fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }));
+      }
+      if (SHEET_ENDPOINT) {
+        requests.push(fetch(SHEET_ENDPOINT, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }));
+      }
+      if (requests.length) { await Promise.allSettled(requests); }
+    }
+
+    function showSuccess(message) {
+      document.getElementById('updatesForm').style.display = 'none';
+      document.getElementById('buyerForm').style.display = 'none';
+      document.querySelector('.toggle').style.display = 'none';
+      successMsg.textContent = message;
+      successBox.classList.add('show');
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Stay updated
+    document.getElementById('updatesForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name = document.getElementById('u-name').value.trim();
+      const email = document.getElementById('u-email').value.trim();
+      if (!name || !email) { alert('Please add your name and email so we can reach you.'); return; }
+      const btn = this.querySelector('button[type=submit]');
+      btn.textContent = 'Saving…'; btn.disabled = true;
+      try {
+        await send({ listType: 'Updates', name, email, page: 'Astoria Ln', submittedAt: new Date().toISOString() });
+        showSuccess("Thanks — you're on the list. We'll keep you posted as Astoria Ln takes shape.");
+      } catch (err) {
+        btn.textContent = 'Keep Me Posted'; btn.disabled = false;
+        alert("Something went wrong sending that. Please try again, or email brighthomeinvestments@outlook.com.");
+      }
+    });
+
+    // Interested in buying
+    document.getElementById('buyerForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name = document.getElementById('b-name').value.trim();
+      const email = document.getElementById('b-email').value.trim();
+      if (!name || !email) { alert('Please add your name and email so we can reach you.'); return; }
+      const btn = this.querySelector('button[type=submit]');
+      btn.textContent = 'Sending…'; btn.disabled = true;
+      try {
+        await send({
+          listType: 'Buyer',
+          name, email,
+          plan: document.getElementById('b-plan').value,
+          timeline: document.getElementById('b-timeline').value,
+          financing: document.getElementById('b-financing').value,
+          preApproved: document.getElementById('b-preapproved').value,
+          question: document.getElementById('b-question').value.trim(),
+          page: 'Astoria Ln', submittedAt: new Date().toISOString()
+        });
+        showSuccess("Thanks — we've got your details and we'll reach out personally.");
+      } catch (err) {
+        btn.textContent = 'Send My Details'; btn.disabled = false;
+        alert("Something went wrong sending that. Please try again, or email brighthomeinvestments@outlook.com.");
+      }
+    });
+  </script>
 
 </body>
 </html>
