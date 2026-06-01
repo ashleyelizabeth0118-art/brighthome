@@ -336,6 +336,7 @@
     .plan-index { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--clay); margin-bottom: 12px; }
     .plan-row h3 { font-family: var(--serif); font-weight: 500; font-size: 40px; line-height: 1; margin-bottom: 10px; }
     .plan-meta { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 22px; }
+    .plan-note { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--ink-mute); margin-top: -10px; }
     .plan-row p { font-size: 17px; color: var(--ink-soft); margin-bottom: 26px; max-width: 460px; }
     .plan-foot { display: flex; align-items: center; gap: 28px; }
     .plan-foot .price .label { display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); }
@@ -520,8 +521,9 @@
           <div class="plan-info">
             <div class="plan-index">Plan 03</div>
             <h3>Dog Trot</h3>
-            <div class="plan-meta">4 Bed · 2,880 SF · Modern or Ranch elevation</div>
-            <p>Our largest plan — four bedrooms and room to grow, offered in two exterior styles. The same efficient build, designed for families who need real space that earns its keep.</p>
+            <div class="plan-meta">4 Bed · 2,880 SF</div>
+            <p>Our largest plan — four bedrooms and room to grow, with the same efficient build. Designed for families who need real space that earns its keep.</p>
+            <p class="plan-note">Renderings shown for visualization only — final exterior details may vary.</p>
             <div class="plan-foot">
               <span class="price"><span class="label">Pricing</span><span class="value">Coming soon</span></span>
             </div>
@@ -718,7 +720,7 @@
     const successMsg = document.getElementById('successMsg');
 
     function dtSwap(btn, style) {
-      const wrap = btn.closest('.plan-img');
+      const wrap = btn.closest('.plan-visual');
       wrap.querySelectorAll('.dt-render').forEach(img => {
         img.style.display = (img.dataset.style === style) ? 'block' : 'none';
       });
