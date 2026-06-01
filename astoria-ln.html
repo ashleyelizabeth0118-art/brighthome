@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
   <style>
     :root {
       --ink: #2B2520;
@@ -251,6 +253,8 @@
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     form .btn { justify-self: start; margin-top: 8px; }
     .form-note { font-size: 13px; color: rgba(250,247,242,0.5); }
+    .hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .cf-turnstile { margin: 4px 0 4px; }
 
     .form-success {
       display: none; padding: 40px; border: 1px solid var(--clay);
@@ -613,6 +617,8 @@
               <label for="u-email">Email</label>
               <input type="email" id="u-email" placeholder="you@email.com" required>
             </div>
+            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADc-bo5sGqB40CY1" data-theme="dark"></div>
             <button type="submit" class="btn btn-clay">Keep Me Posted</button>
             <p class="form-note">Just occasional updates on Astoria Ln — unsubscribe anytime.</p>
           </form>
@@ -672,6 +678,8 @@
               <label for="b-question">Anything you'd like us to know? (optional)</label>
               <textarea id="b-question" placeholder="Questions, timing, financing — whatever's on your mind."></textarea>
             </div>
+            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADc-bo5sGqB40CY1" data-theme="dark"></div>
             <button type="submit" class="btn btn-clay">Send My Details</button>
             <p class="form-note">We'll reach out personally — no pressure, no obligation.</p>
           </form>
@@ -767,9 +775,12 @@
     // Stay updated
     document.getElementById('updatesForm').addEventListener('submit', async function (e) {
       e.preventDefault();
+      if (this.querySelector('.hp-field').value) { return; } // honeypot tripped — silently drop
       const name = document.getElementById('u-name').value.trim();
       const email = document.getElementById('u-email').value.trim();
       if (!name || !email) { alert('Please add your name and email so we can reach you.'); return; }
+      const token = (this.querySelector('[name="cf-turnstile-response"]') || {}).value;
+      if (!token) { alert('Please complete the "verify you\'re human" check above.'); return; }
       const btn = this.querySelector('button[type=submit]');
       btn.textContent = 'Saving…'; btn.disabled = true;
       try {
@@ -784,9 +795,12 @@
     // Interested in buying
     document.getElementById('buyerForm').addEventListener('submit', async function (e) {
       e.preventDefault();
+      if (this.querySelector('.hp-field').value) { return; } // honeypot tripped — silently drop
       const name = document.getElementById('b-name').value.trim();
       const email = document.getElementById('b-email').value.trim();
       if (!name || !email) { alert('Please add your name and email so we can reach you.'); return; }
+      const token = (this.querySelector('[name="cf-turnstile-response"]') || {}).value;
+      if (!token) { alert('Please complete the "verify you\'re human" check above.'); return; }
       const btn = this.querySelector('button[type=submit]');
       btn.textContent = 'Sending…'; btn.disabled = true;
       try {
