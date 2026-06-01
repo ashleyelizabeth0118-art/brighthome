@@ -712,8 +712,8 @@
     /* ============================================================
        PASTE YOUR ENDPOINTS HERE
        ============================================================ */
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // <-- replace
-    const SHEET_ENDPOINT = ""; // <-- optional Google Apps Script /exec URL; leave "" to skip
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgvyqnz";
+    const SHEET_ENDPOINT = ""; // <-- Google Apps Script /exec URL goes here when the Sheet is set up
     /* ============================================================ */
 
     const successBox = document.getElementById('formSuccess');
@@ -773,7 +773,7 @@
       const btn = this.querySelector('button[type=submit]');
       btn.textContent = 'Saving…'; btn.disabled = true;
       try {
-        await send({ listType: 'Updates', name, email, page: 'Astoria Ln', submittedAt: new Date().toISOString() });
+        await send({ _subject: 'Astoria Ln — "Keep me posted" signup', listType: 'Updates', name, email, page: 'Astoria Ln', submittedAt: new Date().toISOString() });
         showSuccess("Thanks — you're on the list. We'll keep you posted as Astoria Ln takes shape.");
       } catch (err) {
         btn.textContent = 'Keep Me Posted'; btn.disabled = false;
@@ -791,6 +791,7 @@
       btn.textContent = 'Sending…'; btn.disabled = true;
       try {
         await send({
+          _subject: 'Astoria Ln — BUYER inquiry',
           listType: 'Buyer',
           name, email,
           plan: document.getElementById('b-plan').value,
