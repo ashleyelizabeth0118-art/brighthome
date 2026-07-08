@@ -707,8 +707,7 @@ box trucked in.
        ============================================================ */
     const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgvyqnz";
     const SHEET_ENDPOINT = ""; // <-- Google Apps Script /exec URL goes here when the Sheet is set up
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyRFyGk3WTPqYV1PnhpJkn_AWNbq2HKwNQRbcV1lO6tBfiIx82oCtqP5AdeZVmHptU/exec";
-    const successBox = document.getElementById('formSuccess');
+const WEB3FORMS_ACCESS_KEY = "b5828c63-d735-4883-aca7-dce3ffda3817";    const successBox = document.getElementById('formSuccess');
     const successMsg = document.getElementById('successMsg');
 
     function switchPane(which) {
@@ -728,11 +727,11 @@ const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyRFyGk3WTPqYV1P
           body: JSON.stringify(payload)
         }));
       }
-      if (SHEET_ENDPOINT) {
-        requests.push(fetch(SHEET_ENDPOINT, {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+    if (WEB3FORMS_ACCESS_KEY) {
+        requests.push(fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...payload, access_key: WEB3FORMS_ACCESS_KEY })
         }));
       }
       if (requests.length) { await Promise.allSettled(requests); }
