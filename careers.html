@@ -92,6 +92,24 @@
     }
     nav a:hover { color: var(--moss); }
 
+    .nav-drop { position: relative; padding-bottom: 14px; margin-bottom: -14px; }
+    .nav-drop > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-drop .caret { font-size: 10px; color: var(--ink-mute); transition: transform 0.2s; }
+    .nav-drop:hover .caret, .nav-drop:focus-within .caret { transform: rotate(180deg); }
+    .nav-sub {
+      list-style: none; position: absolute; top: 100%; left: 0; margin-top: 0;
+      background: var(--cream); border: 1px solid var(--rule); min-width: 170px;
+      padding: 6px 0; display: none; flex-direction: column; gap: 0;
+      box-shadow: 0 8px 24px rgba(42,36,32,0.08); z-index: 60;
+    }
+    .nav-drop:hover .nav-sub, .nav-drop:focus-within .nav-sub { display: flex; }
+    .nav-sub li { width: 100%; }
+    .nav-sub a {
+      display: block; padding: 10px 18px; font-size: 12px; letter-spacing: 0.08em;
+      text-transform: uppercase; white-space: nowrap; color: var(--ink-soft);
+    }
+    .nav-sub a:hover { color: var(--moss); background: var(--cream-deep); }
+
     /* ---------- HERO ---------- */
     .hero {
       padding: 110px 0 130px;
@@ -217,9 +235,12 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/communities">Communities</a></li>
-          <li><a href="/floor-plans">Floor Plans</a></li>
-          <li><a href="/astoria-ln">Astoria Ln</a></li>
-          <li><a href="/mission">Mission</a></li>
+          <li class="nav-drop">
+            <a href="/astoria-ln">Astoria Ln <span class="caret">▾</span></a>
+            <ul class="nav-sub">
+              <li><a href="/floor-plans">Floor Plans</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -257,7 +278,7 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
           <a href="/communities">Communities</a>
           <a href="/floor-plans">Floor Plans</a>
           <a href="/astoria-ln">Astoria Ln</a>
-          <a href="/mission">Mission</a>
+          <a href="/#mission">Mission</a>
           <a href="/careers">Careers</a>
         </div>
         <div class="footer-col">

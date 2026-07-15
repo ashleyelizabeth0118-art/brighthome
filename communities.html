@@ -115,11 +115,12 @@
       transition: color 0.2s;
     }
     nav a:hover { color: var(--moss); }
-    nav a.nav-cta { color: var(--clay); font-weight: 500; }
-
-    .nav-drop { position: relative; }
+    .nav-drop { position: relative; padding-bottom: 14px; margin-bottom: -14px; }
+    .nav-drop > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-drop .caret { font-size: 10px; color: var(--ink-mute); transition: transform 0.2s; }
+    .nav-drop:hover .caret, .nav-drop:focus-within .caret { transform: rotate(180deg); }
     .nav-sub {
-      list-style: none; position: absolute; top: 100%; left: 0; margin-top: 14px;
+      list-style: none; position: absolute; top: 100%; left: 0; margin-top: 0;
       background: var(--cream); border: 1px solid var(--rule); min-width: 170px;
       padding: 6px 0; display: none; flex-direction: column; gap: 0;
       box-shadow: 0 8px 24px rgba(42,36,32,0.08); z-index: 60;
@@ -261,6 +262,17 @@
       transition: color 0.2s;
     }
     .arrow-link:hover { color: var(--ink); border-color: var(--ink); }
+
+    .quiet-link {
+      display: inline-block;
+      margin-bottom: 36px;
+      font-size: 14px;
+      color: var(--ink-mute);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .quiet-link:hover { color: var(--ink-soft); }
 
     .pillars {
       display: grid;
@@ -635,9 +647,12 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/communities">Communities</a></li>
-          <li><a href="/floor-plans">Floor Plans</a></li>
-          <li><a href="/astoria-ln">Astoria Ln</a></li>
-          <li><a href="/mission">Mission</a></li>
+          <li class="nav-drop">
+            <a href="/astoria-ln">Astoria Ln <span class="caret">▾</span></a>
+            <ul class="nav-sub">
+              <li><a href="/floor-plans">Floor Plans</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -659,7 +674,7 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
           <span class="town-county">Douglas County</span>
         </div>
         <p class="town-blurb">A small Ozarks town anchoring our first development. Ava has the schools, the community, and the land — we're building the homes to match.</p>
-        <a href="https://www.avachamber.org/" class="arrow-link" target="_blank" rel="noopener">Learn More About Ava →</a>
+        <a href="https://www.avachamber.org/" class="quiet-link" target="_blank" rel="noopener">Learn more about Ava (external site)</a>
 
         <div class="dev-row">
           <div>
@@ -667,22 +682,11 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
             <h3>Astoria Ln</h3>
             <p>Bright Home's first neighborhood — see the homesites and floor plans available now.</p>
           </div>
-          <a href="/astoria-ln" class="arrow-link">Explore Astoria Ln →</a>
+          <a href="/astoria-ln" class="btn">Explore Astoria Ln</a>
         </div>
       </div>
 
       <p class="future-note">More towns are taking shape across south-central and southwest Missouri. Check back as new communities are announced.</p>
-    </div>
-  </section>
-
-  <section class="contact-cta">
-    <div class="wrap contact-cta-inner">
-      <div>
-        <div class="section-label">Get in Touch</div>
-        <h2>Interested in a home at <em>Astoria Ln?</em></h2>
-        <p class="contact-cta-sub">Tell us what you're looking for — no pressure, no obligation. We'll reach out personally.</p>
-      </div>
-      <a href="/astoria-ln#reserve" class="btn">Get in Touch</a>
     </div>
   </section>
 
@@ -700,7 +704,7 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
           <a href="/communities">Communities</a>
           <a href="/floor-plans">Floor Plans</a>
           <a href="/astoria-ln">Astoria Ln</a>
-          <a href="/mission">Mission</a>
+          <a href="/#mission">Mission</a>
           <a href="/careers">Careers</a>
         </div>
         <div class="footer-col">

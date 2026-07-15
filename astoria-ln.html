@@ -167,11 +167,12 @@
       transition: color 0.2s;
     }
     nav a:hover { color: var(--moss); }
-    nav a.nav-cta { color: var(--clay); font-weight: 500; }
-
-    .nav-drop { position: relative; }
+    .nav-drop { position: relative; padding-bottom: 14px; margin-bottom: -14px; }
+    .nav-drop > a { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-drop .caret { font-size: 10px; color: var(--ink-mute); transition: transform 0.2s; }
+    .nav-drop:hover .caret, .nav-drop:focus-within .caret { transform: rotate(180deg); }
     .nav-sub {
-      list-style: none; position: absolute; top: 100%; left: 0; margin-top: 14px;
+      list-style: none; position: absolute; top: 100%; left: 0; margin-top: 0;
       background: var(--cream); border: 1px solid var(--rule); min-width: 170px;
       padding: 6px 0; display: none; flex-direction: column; gap: 0;
       box-shadow: 0 8px 24px rgba(42,36,32,0.08); z-index: 60;
@@ -450,9 +451,12 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/communities">Communities</a></li>
-          <li><a href="/floor-plans">Floor Plans</a></li>
-          <li><a href="/astoria-ln">Astoria Ln</a></li>
-          <li><a href="/mission">Mission</a></li>
+          <li class="nav-drop">
+            <a href="/astoria-ln">Astoria Ln <span class="caret">▾</span></a>
+            <ul class="nav-sub">
+              <li><a href="/floor-plans">Floor Plans</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -709,7 +713,7 @@ box trucked in.
           <a href="/communities">Communities</a>
           <a href="/floor-plans">Floor Plans</a>
           <a href="/astoria-ln">Astoria Ln</a>
-          <a href="/mission">Mission</a>
+          <a href="/#mission">Mission</a>
           <a href="/careers">Careers</a>
         </div>
         <div class="footer-col">
