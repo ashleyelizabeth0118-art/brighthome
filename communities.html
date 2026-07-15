@@ -378,6 +378,30 @@
     }
     .project dd { color: var(--ink); font-weight: 400; }
 
+    /* ---------- TOWNS ---------- */
+    .town { margin-top: 8px; }
+    .town + .town { margin-top: 72px; }
+    .town-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+    .town-head h2 { font-family: var(--serif); font-weight: 500; font-size: 36px; margin-bottom: 0; }
+    .town-county { font-family: var(--serif); font-style: italic; color: var(--ink-mute); font-size: 16px; }
+    .town-blurb { font-size: 16px; color: var(--ink-soft); max-width: 640px; margin: 14px 0 20px; }
+
+    .dev-row {
+      display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+      background: var(--cream-deep); border: 1px solid var(--rule); padding: 32px 36px; margin-top: 24px;
+    }
+    .dev-status { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
+    .dev-row h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin-bottom: 6px; }
+    .dev-row p { font-size: 15px; color: var(--ink-soft); max-width: 480px; }
+
+    .future-note {
+      margin-top: 64px; padding: 32px 36px; border: 1px dashed var(--rule);
+      font-family: var(--serif); font-style: italic; color: var(--ink-mute); font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      .dev-row { flex-direction: column; align-items: flex-start; }
+    }
+
     /* ---------- HOME PLANS ---------- */
     .plans-intro {
       font-size: 18px;
@@ -611,12 +635,9 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/communities">Communities</a></li>
-          <li class="nav-drop">
-            <a href="/astoria-ln" class="nav-cta">Astoria Ln</a>
-            <ul class="nav-sub">
-              <li><a href="/floor-plans">See the Homes</a></li>
-            </ul>
-          </li>
+          <li><a href="/floor-plans">Floor Plans</a></li>
+          <li><a href="/astoria-ln">Astoria Ln</a></li>
+          <li><a href="/mission">Mission</a></li>
         </ul>
       </nav>
     </div>
@@ -632,16 +653,25 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
 
   <section>
     <div class="wrap">
-      <div class="projects">
-        <div class="project">
-          <div class="project-status">Now Reserving</div>
-          <h3>Astoria Ln</h3>
-          <div class="project-loc">Ava, Missouri · Douglas County</div>
-          <p>A new neighborhood of well-built, energy-efficient homes — USDA and FHA eligible. Three plans: Fiona, Orchid, and Dog Trot.</p>
+      <div class="town">
+        <div class="town-head">
+          <h2>Ava, Missouri</h2>
+          <span class="town-county">Douglas County</span>
+        </div>
+        <p class="town-blurb">A small Ozarks town anchoring our first development. Ava has the schools, the community, and the land — we're building the homes to match.</p>
+        <a href="https://www.avachamber.org/" class="arrow-link" target="_blank" rel="noopener">Learn More About Ava →</a>
+
+        <div class="dev-row">
+          <div>
+            <div class="dev-status">Now Reserving</div>
+            <h3>Astoria Ln</h3>
+            <p>Bright Home's first neighborhood — see the homesites and floor plans available now.</p>
+          </div>
           <a href="/astoria-ln" class="arrow-link">Explore Astoria Ln →</a>
         </div>
       </div>
-      <p class="plans-intro" style="margin-top:48px;">More communities are taking shape across south-central and southwest Missouri. Check back as new neighborhoods are announced.</p>
+
+      <p class="future-note">More towns are taking shape across south-central and southwest Missouri. Check back as new communities are announced.</p>
     </div>
   </section>
 
@@ -668,7 +698,10 @@ New homes are underway in Ava, Missouri — <em>reservations are open.</em>
           <h4>Explore</h4>
           <a href="/">Home</a>
           <a href="/communities">Communities</a>
+          <a href="/floor-plans">Floor Plans</a>
           <a href="/astoria-ln">Astoria Ln</a>
+          <a href="/mission">Mission</a>
+          <a href="/careers">Careers</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
