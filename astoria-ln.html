@@ -128,8 +128,9 @@
 
     /* ---------- RIBBON BAND ---------- */
     .ribbon-band { margin-top: 56px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .ribbon-item { position: relative; display: block; height: 220px; overflow: hidden; }
-    .ribbon-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ribbon-item { position: relative; display: block; height: 220px; overflow: hidden; text-decoration: none; }
+    .ribbon-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+    .ribbon-item:hover img { transform: scale(1.04); }
     .ribbon-name {
       position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 18px;
       background: linear-gradient(to top, rgba(37,30,22,0.75), transparent);
@@ -454,7 +455,7 @@
           <li class="nav-drop">
             <a href="/astoria-ln">Astoria Ln <span class="caret">▾</span></a>
             <ul class="nav-sub">
-              <li><a href="/floor-plans">Floor Plans</a></li>
+              <li><a href="/floor-plans">The Homes</a></li>
             </ul>
           </li>
         </ul>
@@ -564,18 +565,18 @@ box trucked in.
       </div>
 
       <div class="ribbon-band">
-        <div class="ribbon-item">
+        <a class="ribbon-item" href="/floor-plans">
           <img src="/images/Fiona.jpg" alt="Fiona home render">
           <div class="ribbon-name">Fiona</div>
-        </div>
-        <div class="ribbon-item">
+        </a>
+        <a class="ribbon-item" href="/floor-plans">
           <img src="/images/Orchid.jpg" alt="Orchid home render">
           <div class="ribbon-name">Orchid</div>
-        </div>
-        <div class="ribbon-item">
+        </a>
+        <a class="ribbon-item" href="/floor-plans">
           <img src="/images/DogTrot_Modern.jpg" alt="Dog Trot home render">
           <div class="ribbon-name">Dog Trot</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -711,7 +712,7 @@ box trucked in.
           <h4>Explore</h4>
           <a href="/">Home</a>
           <a href="/communities">Communities</a>
-          <a href="/floor-plans">Floor Plans</a>
+          <a href="/floor-plans">The Homes</a>
           <a href="/astoria-ln">Astoria Ln</a>
           <a href="/#mission">Mission</a>
           <a href="/careers">Careers</a>
