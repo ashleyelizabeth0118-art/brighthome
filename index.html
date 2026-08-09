@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bright Home Investments — Quality homes in the Missouri Ozarks</title>
-  <meta name="description" content="Well-built homes working families can actually afford. Building homes that stay in reach across the Missouri Ozarks.">
+  <title>Bright Home Investments — Building a Future for Rural Missouri</title>
+  <meta name="description" content="Bright Home Investments develops homes and communities for rural places that deserve to grow. Building homes that stay in reach across the Missouri Ozarks.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://brighthomeinvestments.net/">
@@ -17,15 +17,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bright Home Investments">
-  <meta property="og:title" content="Bright Home Investments — Quality homes in the Missouri Ozarks">
-  <meta property="og:description" content="Well-built homes working families can actually afford. Building homes that stay in reach across the Missouri Ozarks.">
+  <meta property="og:title" content="Bright Home Investments — Building a Future for Rural Missouri">
+  <meta property="og:description" content="Bright Home Investments develops homes and communities for rural places that deserve to grow. Building homes that stay in reach across the Missouri Ozarks.">
   <meta property="og:url" content="https://brighthomeinvestments.net/">
   <meta property="og:image" content="https://brighthomeinvestments.net/images/Bright_Home_Logo.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bright Home Investments — Quality homes in the Missouri Ozarks">
-  <meta name="twitter:description" content="Well-built homes working families can actually afford. Building homes that stay in reach across the Missouri Ozarks.">
+  <meta name="twitter:title" content="Bright Home Investments — Building a Future for Rural Missouri">
+  <meta name="twitter:description" content="Bright Home Investments develops homes and communities for rural places that deserve to grow. Building homes that stay in reach across the Missouri Ozarks.">
   <meta name="twitter:image" content="https://brighthomeinvestments.net/images/Bright_Home_Logo.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -549,6 +549,62 @@
       letter-spacing: 0.04em;
     }
 
+    /* ---------- HERO IMAGE (new layout) ---------- */
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+    .hero-img { width: 100%; height: 560px; object-fit: cover; border: 1px solid var(--rule); }
+    .hero-grid .hero-meta { position: static; margin-top: 14px; text-align: right; }
+    .hero-grid h1 { max-width: none; font-size: clamp(38px, 5vw, 62px); }
+    .hero-grid .hero-sub { max-width: 520px; margin-bottom: 18px; }
+    .hero-grid .hero-sub:last-of-type { margin-bottom: 44px; }
+    @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .hero-img { height: 360px; } }
+
+    /* ---------- GENERIC PHOTO PLACEHOLDER ---------- */
+    .ph {
+      background: var(--cream-deep); border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-style: italic; font-size: 13px;
+      color: var(--ink-mute); text-align: center; padding: 8px;
+    }
+
+    /* ---------- PROBLEM ---------- */
+    .problem-lead { font-size: 19px; color: var(--ink-soft); max-width: 680px; margin-bottom: 24px; }
+    .problem-lead.callout { color: var(--ink); font-weight: 400; margin-bottom: 40px; }
+
+    /* ---------- HOW WE BUILD ---------- */
+    .build-lead { font-size: 19px; color: var(--ink-soft); max-width: 620px; margin-bottom: 22px; }
+    .build-lead.tight { font-size: 17px; margin-bottom: 26px; }
+    .build-lead.callout { color: var(--ink); font-weight: 400; }
+
+    /* ---------- BRIGHT GROUNDS ---------- */
+    .bg-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+    .bg-lead { font-size: 19px; color: var(--ink-soft); max-width: 560px; margin-bottom: 22px; }
+    .bg-callout { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--ink); margin-bottom: 28px; }
+    .bg-footnote { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--ink-mute); }
+    .bg-grid .ph { height: 420px; }
+    @media (max-width: 880px) { .bg-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- STARTING IN AVA ---------- */
+    #ava-proof { background: var(--espresso); color: var(--cream); }
+    #ava-proof .section-label { color: var(--gold); }
+    #ava-proof h2 { color: var(--cream); max-width: 640px; }
+    .ava-lead { font-size: 19px; color: rgba(246,241,232,0.82); max-width: 620px; margin-bottom: 20px; }
+    .ava-close { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--cream); margin-top: 8px; }
+    .ava-close span { display: block; }
+    #ava-proof .btn { background: var(--clay); border-color: var(--clay); margin-top: 36px; }
+    #ava-proof .btn:hover { background: transparent; color: var(--clay); }
+
+    /* ---------- BIGGER THAN ONE PROJECT ---------- */
+    .landscape-img { width: 100%; height: 420px; object-fit: cover; border: 1px solid var(--rule); margin-bottom: 64px; }
+    .bridge-text { max-width: 720px; margin: 0 auto; text-align: center; }
+    .bridge-lead { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3vw, 36px); line-height: 1.35; color: var(--ink); margin-bottom: 36px; }
+    .bridge-lead em { font-style: italic; color: var(--moss); }
+    .bridge-body { font-size: 18px; color: var(--ink-soft); margin-bottom: 36px; }
+    .bridge-count { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--ink); }
+    .bridge-count span { display: block; margin: 4px 0; }
+
+    /* ---------- FINAL CTA IMAGE ---------- */
+    .cta-image { width: 100%; height: 320px; object-fit: cover; display: block; }
+
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 880px) {
       .wrap { padding: 0 24px; }
@@ -626,48 +682,153 @@ New homes coming to Ava, Missouri — <em>now connecting with homebuyers.</em>
   </header>
 
   <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Rural Homebuilding<span class="dot"></span>Missouri Ozarks</div>
+        <h1>Building a future for the towns we call <em>home.</em></h1>
+        <p class="hero-sub">Bright Home Investments develops homes and communities for rural places that deserve to grow.</p>
+        <p class="hero-sub">We believe the future of rural housing isn't somewhere else. It's here — in the communities people already call home.</p>
+        <a href="/communities" class="btn">See What We're Building</a>
+      </div>
+      <div>
+        <img src="/images/hero-ozarks.jpg" class="hero-img" alt="Ozarks landscape near Ava, Missouri">
+        <div class="hero-meta">Missouri Ozarks</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
     <div class="wrap">
-      <div class="eyebrow">Rural Homebuilding<span class="dot"></span>Missouri Ozarks</div>
-      <h1>Quality homes working families can <em>actually</em> afford.</h1>
-      <p class="hero-sub">We build durable homes in Missouri communities — designed to last, priced to stay within reach, and made for the people who already belong here.</p>
-      <a href="/communities" class="btn">See Where We're Building</a>
-      <div class="hero-meta">Missouri Ozarks</div>
+      <div class="section-label">Why We're Here</div>
+      <h2>Rural communities are worth building for.</h2>
+      <p class="problem-lead">Across the country, new housing development tends to follow the biggest markets.</p>
+      <p class="problem-lead">That leaves smaller communities with an uncomfortable choice: make do with aging housing stock, watch people leave for opportunities elsewhere, or wait for someone else to decide the community is worth investing in.</p>
+      <p class="problem-lead callout">We don't think rural communities should have to wait.</p>
+      <p class="problem-lead">Bright Home exists to bring thoughtful housing development to places that are often overlooked — not by lowering the standard, but by finding better ways to build.</p>
     </div>
   </section>
 
   <section id="mission">
     <div class="wrap">
-      <div class="section-label">Our Mission</div>
-      <h2>Homes for the people who <em>keep these towns running.</em></h2>
-      <p class="mission-lead">Across the Ozarks, the people who keep these towns running — teachers, tradespeople, the families who've been here for generations — are getting priced out of the places they call home. Nothing new is being built at a price they can reach, and the old housing stock is wearing out.</p>
-      <p class="mission-lead">Bright Home Investments was formed to change that — the right way: durable homes, built to handle this climate, keep energy costs down, and stay within reach for the families who live and work here.</p>
+      <div class="section-label">What We Believe</div>
+      <h2>We believe rural housing deserves better.</h2>
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-num">01</div>
           <h3>Built to last</h3>
-          <p>Durable homes engineered for the Ozarks climate and built to keep energy costs down — made to outlast the mortgage.</p>
+          <p>The homes we build should serve the people who live in them for generations — not simply meet today's minimum standard.</p>
         </div>
         <div class="pillar">
           <div class="pillar-num">02</div>
-          <h3>Priced Within Reach</h3>
-          <p>Efficient, well-planned homes priced within reach of the working families who need them.</p>
+          <h3>Designed with purpose</h3>
+          <p>Good development starts before construction. We consider the land, the homes, the infrastructure, the people who will live there, and the community around them as one project.</p>
         </div>
         <div class="pillar">
           <div class="pillar-num">03</div>
-          <h3>Rooted in place</h3>
-          <p>Sited to fit the land and the Ozarks towns where families already live and work.</p>
+          <h3>Rooted in community</h3>
+          <p>We're not interested in dropping houses onto a piece of land and moving on. We want what we build to strengthen the places where we build it.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="ava" class="ava-banner">
-    <div class="wrap ava-banner-inner">
-      <div>
-        <div class="section-label">Now Building</div>
-        <h2>New homes coming to <em>Ava, Missouri.</em></h2>
+  <section id="how-we-build">
+    <div class="wrap">
+      <div class="section-label">How We Build</div>
+      <h2>Better housing requires better ways to build.</h2>
+      <p class="build-lead">Building in rural communities comes with challenges that conventional development doesn't always solve well.</p>
+      <p class="build-lead tight">Labor. Construction costs. Energy performance. Durability. Availability of materials. The distance between a job site and the resources needed to build it.</p>
+      <p class="build-lead callout">So we look for better answers.</p>
+      <p class="build-lead">Our partnership with Xtrata gives Bright Home access to an advanced building system designed around durability, energy efficiency, and a more efficient construction process.</p>
+      <p class="build-lead">It's not about using a different building system for the sake of being different. It's about finding better ways to deliver the quality of home rural communities deserve.</p>
+      <a href="https://www.xtrata.com/technology" class="arrow-link" target="_blank" rel="noopener">Explore the Xtrata System →</a>
+    </div>
+  </section>
+
+  <section id="the-homes">
+    <div class="wrap">
+      <div class="section-label">The Homes</div>
+      <h2>Good homes belong here, too.</h2>
+      <p class="plans-intro">Rural housing doesn't need to look like an afterthought. We're developing homes that are comfortable, durable, efficient, and thoughtfully designed for the places where they'll be built. Our plans are part of a growing collection of homes designed to give rural communities more choices — not fewer.</p>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-img"><img src="/images/Fiona.jpg" alt="Rendering of the Fiona home plan"></div>
+          <h3>Fiona</h3>
+          <div class="plan-tagline">1,080 SF</div>
+          <p class="plans-intro" style="font-size:15px; margin-bottom:12px;">A practical, welcoming home designed around everyday living.</p>
+          <a href="/floor-plans" class="arrow-link">View Floor Plan →</a>
+        </div>
+        <div class="plan">
+          <div class="plan-img"><img src="/images/Orchid.jpg" alt="Rendering of the Orchid home plan"></div>
+          <h3>Orchid</h3>
+          <div class="plan-tagline">1,268 SF</div>
+          <p class="plans-intro" style="font-size:15px; margin-bottom:12px;">More room to live, gather, and grow without sacrificing thoughtful design.</p>
+          <a href="/floor-plans" class="arrow-link">View Floor Plan →</a>
+        </div>
+        <div class="plan">
+          <div class="plan-img"><img src="/images/DogTrot_Modern.jpg" alt="Rendering of the Dog Trot home plan"></div>
+          <h3>Dog Trot</h3>
+          <div class="plan-tagline">2,880 SF</div>
+          <p class="plans-intro" style="font-size:15px; margin-bottom:12px;">A larger home rooted in the character and traditions of the Ozarks.</p>
+          <a href="/floor-plans" class="arrow-link">View Floor Plan →</a>
+        </div>
       </div>
-      <a href="/astoria-ln" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <section id="bright-grounds">
+    <div class="wrap bg-grid">
+      <div>
+        <div class="section-label">We Think Long-Term</div>
+        <h2>Building more than homes.</h2>
+        <p class="bg-lead">A home is part of a larger community — and the land beneath it matters, too.</p>
+        <p class="bg-lead">Bright Home Investments is partnering with <strong>Bright Grounds Inc.</strong>, a Missouri community land trust, to explore a model that pairs new housing development with long-term stewardship of the land.</p>
+        <p class="bg-lead">The goal is simple: build good homes today while creating opportunities for those homes to remain part of the community for generations to come.</p>
+        <p class="bg-callout">Bright Home builds. Bright Grounds helps keep the land rooted in the community.</p>
+        <p class="bg-footnote">Bright Grounds Inc. is a 501(c)(3) nonprofit community land trust.</p>
+      </div>
+      <div class="ph" style="padding:0;"><img src="/images/bright-grounds.jpg" alt="Ozarks overlook near Ava, Missouri" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+    </div>
+  </section>
+
+  <section id="ava-proof">
+    <div class="wrap">
+      <div class="section-label">Starting in Ava</div>
+      <h2>Starting in Ava.</h2>
+      <p class="ava-lead">Ava is where we're putting the idea into practice.</p>
+      <p class="ava-lead">We're developing a new neighborhood of homes in Ava, Missouri — bringing together thoughtful site planning, durable construction, energy-conscious homes, and a long-term approach to homeownership.</p>
+      <div class="ava-close">
+        <span>It's one project.</span>
+        <span>But it's also the beginning of something bigger.</span>
+      </div>
+      <a href="/astoria-ln" class="btn">Explore the Ava Project</a>
+    </div>
+  </section>
+
+  <section id="bigger-than-one">
+    <div class="wrap">
+      <img src="/images/bigger-than-one-ozarks.jpg" class="landscape-img" alt="Ozarks hills near Ava, Missouri">
+      <div class="bridge-text">
+        <p class="bridge-lead">We're not trying to build everywhere.<br>We're trying to build <em>where it matters.</em></p>
+        <p class="bridge-body">There are thousands of rural communities across the country with land, people, history, and a future — but not enough housing to support that future. We believe thoughtful development can change that.</p>
+        <div class="bridge-count">
+          <span>One property.</span>
+          <span>One neighborhood.</span>
+          <span>One community at a time.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <img src="/images/final-cta-sunset.jpg" class="cta-image" alt="Sunset over the Ozarks">
+  <section class="contact-cta">
+    <div class="wrap contact-cta-inner">
+      <div>
+        <div class="section-label">Get In Touch</div>
+        <h2>Let's build something worth staying for.</h2>
+        <p class="contact-cta-sub">We're looking for communities, properties, partners, and people who believe rural America deserves great places to live.</p>
+      </div>
+      <a href="mailto:info@brighthomeinvestments.net" class="btn">Start a Conversation</a>
     </div>
   </section>
 
