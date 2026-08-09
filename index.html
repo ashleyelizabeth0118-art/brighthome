@@ -571,9 +571,22 @@
     .problem-lead.callout { color: var(--ink); font-weight: 400; margin-bottom: 40px; }
 
     /* ---------- HOW WE BUILD ---------- */
-    .build-lead { font-size: 19px; color: var(--ink-soft); max-width: 620px; margin-bottom: 22px; }
+    .build-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: stretch; }
+    .build-lead { font-size: 19px; color: var(--ink-soft); max-width: 560px; margin-bottom: 22px; }
     .build-lead.tight { font-size: 17px; margin-bottom: 26px; }
     .build-lead.callout { color: var(--ink); font-weight: 400; }
+    .stat-grid {
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr);
+      border-top: 1px solid var(--rule); border-left: 1px solid var(--rule);
+      height: 100%;
+    }
+    .stat {
+      padding: 32px 28px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .stat svg { width: 30px; height: 30px; stroke: var(--moss); fill: none; stroke-width: 1.4; margin-bottom: 16px; }
+    .stat-label { font-size: 14.5px; color: var(--ink); line-height: 1.4; }
+    @media (max-width: 880px) { .build-grid { grid-template-columns: 1fr; } .stat-grid { height: auto; } }
 
     /* ---------- BRIGHT GROUNDS ---------- */
     .bg-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
@@ -733,15 +746,43 @@ New homes coming to Ava, Missouri — <em>now connecting with homebuyers.</em>
   </section>
 
   <section id="how-we-build">
-    <div class="wrap">
-      <div class="section-label">How We Build</div>
-      <h2>Better housing requires better ways to build.</h2>
-      <p class="build-lead">Building in rural communities comes with challenges that conventional development doesn't always solve well.</p>
-      <p class="build-lead tight">Labor. Construction costs. Energy performance. Durability. Availability of materials. The distance between a job site and the resources needed to build it.</p>
-      <p class="build-lead callout">So we look for better answers.</p>
-      <p class="build-lead">Our partnership with Xtrata gives Bright Home access to an advanced building system designed around durability, energy efficiency, and a more efficient construction process.</p>
-      <p class="build-lead">It's not about using a different building system for the sake of being different. It's about finding better ways to deliver the quality of home rural communities deserve.</p>
-      <a href="https://www.xtrata.com/technology" class="arrow-link" target="_blank" rel="noopener">Explore the Xtrata System →</a>
+    <div class="wrap build-grid">
+      <div>
+        <div class="section-label">How We Build</div>
+        <h2>Better housing requires better ways to build.</h2>
+        <p class="build-lead">Building in rural communities comes with challenges that conventional development doesn't always solve well.</p>
+        <p class="build-lead tight">Labor. Construction costs. Energy performance. Durability. Availability of materials. The distance between a job site and the resources needed to build it.</p>
+        <p class="build-lead callout">So we look for better answers.</p>
+        <p class="build-lead">Our partnership with Xtrata gives Bright Home access to an advanced building system designed around durability, energy efficiency, and a more efficient construction process.</p>
+        <p class="build-lead">It's not about using a different building system for the sake of being different. It's about finding better ways to deliver the quality of home rural communities deserve.</p>
+        <a href="https://www.xtrata.com/technology" class="arrow-link" target="_blank" rel="noopener">Explore the Xtrata System →</a>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M3 8h13a3 3 0 1 0-2-5" stroke-linecap="round"/><path d="M3 12h17a3 3 0 1 1-2 5" stroke-linecap="round"/><path d="M3 16h9a2.5 2.5 0 1 1-1.5 4.5" stroke-linecap="round"/></svg>
+          <div class="stat-label">Resist up to 250 MPH winds</div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M12 2c1 3-2 4-2 7a3 3 0 0 0 6 0c0-1-1-2-1-2 2 1 3 3 3 5a6 6 0 0 1-12 0c0-4 3-6 3-8 0-1-.5-1.5-.5-1.5S11 3 12 2z" stroke-linejoin="round"/></svg>
+          <div class="stat-label">0% flame spread</div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.2"/></svg>
+          <div class="stat-label">Resilient to mold &amp; termites</div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M4 21V10l8-6 8 6v11" stroke-linejoin="round" stroke-linecap="round"/><path d="M9 21v-5l1.5-2 1.5 2.5 1.5-3 1.5 2.5V21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="stat-label">Earthquake resistant</div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M3 10v4h3l5 4V6L6 10H3z" stroke-linejoin="round"/><path d="M15.5 9a4 4 0 0 1 0 6" stroke-linecap="round"/><path d="M18 6.5a8 8 0 0 1 0 11" stroke-linecap="round"/></svg>
+          <div class="stat-label">High Sound Transmission Class (STC)</div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24"><path d="M4 21V11l8-6 8 6v10H4z" stroke-linejoin="round"/><path d="M10 21v-6h4v6" stroke-linejoin="round"/><path d="M8 9l1.3-1.3M12 7.5V6M16 9l-1.3-1.3" stroke-linecap="round"/></svg>
+          <div class="stat-label">71% more energy efficient than a standard US home</div>
+        </div>
+      </div>
     </div>
   </section>
 
